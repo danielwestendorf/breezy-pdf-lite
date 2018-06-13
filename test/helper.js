@@ -1,6 +1,7 @@
 /* global td:true */
 /* global server:true */
 const { spawn } = require('child_process')
+const sleep     = require('sleep')
 
 global.td = require('testdouble')
 
@@ -28,6 +29,7 @@ module.exports = {
       console.log(data.toString())
 
       if (data.toString().match('Listening')) {
+        sleep.sleep(5) // Wait for Google Chrome to start
         done()
       }
     })

@@ -1,6 +1,5 @@
 const { spawn } = require('child_process')
 const Server    = require('./lib/server')
-const sleep     = require('sleep')
 
 if (process.env.GOOGLE_CHROME_SHIM !== undefined) {
   console.log('Starting Google Chrome')
@@ -28,8 +27,6 @@ if (process.env.GOOGLE_CHROME_SHIM !== undefined) {
   chrome.stdout.on('data', (data) => {
     console.log(data.toString())
   })
-
-  sleep.sleep(5) // Wait for Google Chrome to start
 }
 
 console.log('Starting web server...')
