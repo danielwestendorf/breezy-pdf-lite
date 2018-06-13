@@ -20,7 +20,7 @@ This is done with a `POST` request the the web server. We'll use some example HT
 ```sh
   curl -X POST -H 'Authorization: Bearer PRIVATE_TOKEN_DEFINED_IN_SERVER_ENVIRONMENT' \
     http://url-of-your-breezy-pdf-lite-server/render/html \
-    -d '`curl https://raw.githubusercontent.com/danielwestendorf/breezy-pdf-lite/master/sample.html`' \
+    -d "`curl https://raw.githubusercontent.com/danielwestendorf/breezy-pdf-light/master/sample.html`" \
     -o example.pdf
 ```
 
