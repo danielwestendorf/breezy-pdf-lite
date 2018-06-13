@@ -3,6 +3,7 @@ const Server    = require('./lib/server')
 
 if (process.env.GOOGLE_CHROME_SHIM !== undefined) {
   console.log('Starting Google Chrome')
+
   const chrome = spawn(
     process.env.GOOGLE_CHROME_SHIM,
     [

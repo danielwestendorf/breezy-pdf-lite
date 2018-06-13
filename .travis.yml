@@ -3,6 +3,13 @@ node_js:
   - "node"
 addons:
   chrome: stable
+before_install:
+  - google-chrome-stable --no-sandbox --headless --disable-gpu --remote-debugging-port=9222 http://localhost &
+  - |
+    until nc -z -v -w30 127.0.0.1 9222
+    do
+      sleep 1
+    done
 script:
 - npm run testncov
 # after_success:
