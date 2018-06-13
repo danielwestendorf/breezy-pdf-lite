@@ -28,7 +28,9 @@ module.exports = {
       console.log(data.toString())
 
       if (data.toString().match('Listening')) {
-        done()
+        setTimeout(function() {
+          done()
+        }, 1000)
       }
     })
   },
