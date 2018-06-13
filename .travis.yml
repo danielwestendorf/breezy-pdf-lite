@@ -12,5 +12,5 @@ before_install:
     done
 script:
 - npm run testncov
-# after_success:
-# - cat ./node_modules/lcov.info | ./node_modules/coveralls/bin/coveralls.js
+after_success:
+- cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js
