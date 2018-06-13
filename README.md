@@ -61,8 +61,8 @@ You might be rendering a Javascript heavy page, so it's helpful to let `chrome` 
 
 #### Non-Heroku
 
-1. Install node
-2. `npm install`
+1. Install node & yarn
+2. `yarn install`
 4. Set the Environment variables specified below
 5. Start the web process `node index.js`
 
