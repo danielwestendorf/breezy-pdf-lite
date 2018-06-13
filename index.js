@@ -14,7 +14,8 @@ if (process.env.GOOGLE_CHROME_SHIM !== undefined) {
       '--disable-default-apps',
       '--no-first-run',
       '--mute-audio',
-      '--hide-scrollbars'
+      '--hide-scrollbars',
+      '--no-sandbox'
     ]
   )
 
