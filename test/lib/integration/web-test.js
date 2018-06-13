@@ -29,7 +29,7 @@ module.exports = {
       console.log(data.toString())
 
       if (data.toString().match('Listening')) {
-        setTimeout(done, 5000) // Wait for Google Chrome to start
+       done()
       }
     })
   },
