@@ -1,0 +1,35 @@
+{
+  "name": "BreezyPDF Lite",
+  "description": "Submit an HTML string, get a PDF back, rendered by Google Chrome. Built by BreezyPDF.com",
+  "keywords": [
+    "pdf",
+    "chrome",
+    "service",
+    "heroku",
+    "html2pdf"
+  ],
+  "scripts": {
+  },
+  "repository": "https://github.com/danielwestendorf/breezy-pdf-lite",
+  "env": {
+    "PRIVATE_TOKEN": {
+      "description": "A secret key for submitting tokens to the API.",
+      "generator": "secret"
+    },
+    "NODE_ENV": {
+      "description": "node env",
+      "value": "production"
+    }
+  },
+  "addons": [
+  ],
+  "image": "heroku/nodejs",
+  "buildpacks": [
+    {
+      "url": "https://github.com/kwlockwo/heroku-buildpack-google-chrome",
+    },
+    {
+      "url": "https://github.com/heroku/heroku-buildpack-nodejs"
+    }
+  ]
+}

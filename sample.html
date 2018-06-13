@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="breezy-pdf-variable" content="pdfRenderReady">
+  <meta name="breezy-pdf-displayBackground" content="true">
+  <meta name="breezy-pdf-marginTop" content="0.4">
+  <meta name="breezy-pdf-marginBottom" content="0.8">
+  <meta name="breezy-pdf-footerTemplate" content="  &lt;style type=&quot;text/css&quot;&gt;
+    #footer {
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 1.5;
+      color: #212529;
+      font-family: -apple-system,BlinkMacSystemFont,&quot;Segoe UI&quot;,Roboto,&quot;Helvetica Neue&quot;,Arial,sans-serif,&quot;Apple Color Emoji&quot;,&quot;Segoe UI Emoji&quot;,&quot;Segoe UI Symbol&quot;;
+      width: 100%;
+      align-items: flex-end;
+      padding-bottom: 0.4cm;
+      color: lightgrey;
+    }
+
+    .left {
+      flex: none;
+      padding-left: 0.7cm;
+      padding-right: 0.1cm;
+    }
+
+    .center {
+      flex: auto;
+      padding-left: 0.7cm;
+      padding-right: 0.7cm;
+      text-align: center;
+    }
+
+    .right {
+      flex: none;
+      padding-left: 0.1cm;
+      padding-right: 0.7cm;
+    }
+
+    .grow {
+      flex: auto;
+    }
+
+    .text {
+      font-size: 8px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .text img {
+      height: 16px;
+    }
+  &lt;/style&gt;
+  &lt;div id=&quot;footer&quot;&gt;
+    &lt;div class=&quot;left text&quot;&gt;
+      &lt;span class=&quot;date&quot;&gt;&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;text center grow&quot;&gt;
+      &lt;a href=&quot;https://breezypdf.com&quot;&gt;
+        &lt;img src=&quot;data:image/svg+xml;base64,Cjxzdmcgd2lkdGg9IjQwNnB4IiBoZWlnaHQ9IjczcHgiIHZpZXdCb3g9IjAgMCA0MDYgNzMiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+CiAgICA8ZyBpZD0iUGFnZS0xIiBzdHJva2U9Im5vbmUiIHN0cm9rZS13aWR0aD0iMSIgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj4KICAgICAgICA8ZyBpZD0iTGlnaHRCRyI+CiAgICAgICAgICAgIDxnIGlkPSJHcm91cCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoOTQuMDAwMDAwLCAxMy4wMDAwMDApIiBmaWxsPSIjMDAwMDAwIj4KICAgICAgICAgICAgICAgIDxwYXRoIGQ9Ik0yMjAuNTExMjc4LDIuMzUgTDIyOC43MDU5ODUsMi4zNSBDMjMzLjE0MjQzLDIuMzUgMjM2LjMzMjQsMi43NTc5MzY4OCAyMzguMjkxNTk0LDMuNTY0NTM5MzQgQzI0MC4yNTA3ODksNC4zNzExNDE4IDI0MS44MDQ5NTcsNS42NjkxMjI3NyAyNDIuOTM1MjYyLDcuNDc3MDI0ODMgQzI0NC4wNjU1NjYsOS4yNzU2NTU2IDI0NC42MzA3MTgsMTEuNDM1ODY2OCAyNDQuNjMwNzE4LDEzLjk0NTI5NjcgQzI0NC42MzA3MTgsMTYuNzM1OTU1OCAyNDMuODg2NjAxLDE5LjA1Mzc3ODkgMjQyLjQwNzc4NiwyMC44OTg3NjYxIEMyNDAuOTI4OTcxLDIyLjc0OTkzNDIgMjM4LjkxMzI2MiwyNC4wMzI0NjMxIDIzNi4zNzk0OTYsMjQuNzUyNTMzNSBDMjM0Ljg5MTI2MiwyNS4xNjk3NDE2IDIzMi4xODE2NzEsMjUuMzgyOTgxNCAyMjguMjQ0NDQ0LDI1LjM4Mjk4MTQgTDIyOC4yNDQ0NDQsNDIuMyBMMjIwLjUxMTI3OCw0Mi4zIEwyMjAuNTExMjc4LDIuMzUgWiBNMjI4LjI0NDQ0NCwxNy45NjkwMzc3IEwyMzAuNjkzNDM3LDE3Ljk2OTAzNzcgQzIzMi42MjQzNzQsMTcuOTY5MDM3NyAyMzMuOTcxMzIsMTcuODI5OTY4MyAyMzQuNzI0ODU2LDE3LjU2MTEwMDggQzIzNS40NzgzOTIsMTcuMjkyMjMzMyAyMzYuMDY4NjYyLDE2LjgzNzk0IDIzNi41MDUwODUsMTYuMjE2NzYzNCBDMjM2LjkzODM2OSwxNS41OTU1ODY4IDIzNy4xNTE4NzEsMTQuODM1MzQwOCAyMzcuMTUxODcxLDEzLjk0NTI5NjcgQzIzNy4xNTE4NzEsMTIuNDA5MzUyNSAyMzYuNTM5NjIzLDExLjI4NzUyNjEgMjM1LjMzNzEwNCwxMC41ODI5MDc5IEMyMzQuNDUxNjk5LDEwLjA1NDQ0NDIgMjMyLjgxMjc1OCw5Ljc5NDg0Nzk5IDIzMC40MjAyOCw5Ljc5NDg0Nzk5IEwyMjguMjQ0NDQ0LDkuNzk0ODQ3OTkgTDIyOC4yNDQ0NDQsMTcuOTY5MDM3NyBaIE0yNTIuMjEwMDM3LDIuMzUgTDI2MS4zNzE3ODIsMi4zNSBDMjY3LjI3NzYyMywyLjM1IDI3MS42NjY5NzEsMy4wNzMxNjA4MyAyNzQuNTMwNDA5LDQuNTEwMjExMTkgQzI3Ny40MDAxMjYsNS45NTY1MzI4NCAyNzkuNzY0MzQ3LDguMjkyODk4NTggMjgxLjYxOTkzLDExLjUzNzg1MSBDMjgzLjQ3NTUxMywxNC43NzA0NDE3IDI4NC40MDgwMTQsMTguNTUzMTI5MSAyODQuNDA4MDE0LDIyLjg4MjgyMjggQzI4NC40MDgwMTQsMjUuOTYwODkxOSAyODMuODg5OTU4LDI4Ljc4NTU0NTggMjgyLjg1Mzg0NSwzMS4zNzIyMzY0IEMyODEuODA4MzE0LDMzLjk0OTY1NTggMjgwLjM3NjU5NSwzNi4wOTEzMjQ0IDI3OC41NDkyNjksMzcuNzk0MTUxOCBDMjc2LjcxMjUyNSwzOS40OTA3OTgzIDI3NC43MzQ0OTIsNDAuNjY4MjUyNSAyNzIuNTk5NDczLDQxLjMyNjUxNDMgQzI3MC40NzA3MzMsNDEuOTc1NTA0OCAyNjYuNzY4OTg2LDQyLjMgMjYxLjUwNjc5MSw0Mi4zIEwyNTIuMjEwMDM3LDQyLjMgTDI1Mi4yMTAwMzcsMi4zNSBaIE0yNTkuOTExODA2LDkuNjgwNTAyMDUgTDI1OS45MTE4MDYsMzQuODU4MjQyNCBMMjYzLjQ5NDI0MywzNC44NTgyNDI0IEMyNjcuMDIzMzA0LDM0Ljg1ODI0MjQgMjY5LjU4NTMyNywzNC40NTk1NzY5IDI3MS4xNzcxNzMsMzMuNjYyMjQ1NyBDMjcyLjc2OTAxOCwzMi44NjQ5MTQ1IDI3NC4wNjU3MjksMzEuNTI5ODQ4NCAyNzUuMDgzMDAyLDI5LjY0Nzc3NiBDMjc2LjA5Mzk5NywyNy43NjU3MDM2IDI3Ni41OTk0OTQsMjUuNDUwOTcwOCAyNzYuNTk5NDk0LDIyLjY5NzM5NjkgQzI3Ni41OTk0OTQsMTguNDYwNDE2MiAyNzUuMzkzODM2LDE1LjE2OTEwNzMgMjcyLjk4NTY2LDEyLjgzMjc0MTUgQzI3MC44MTkyNDMsMTAuNzM3NDI5NCAyNjcuMzM0MTM4LDkuNjgwNTAyMDUgMjYyLjUzMzQ4NCw5LjY4MDUwMjA1IEwyNTkuOTExODA2LDkuNjgwNTAyMDUgWiBNMjkxLjg1NTQ2NCwyLjM1IEwzMTIsMi4zNSBMMzEyLDkuNzY3MDM0MTEgTDI5OS40OTEyOTgsOS43NjcwMzQxMSBMMjk5LjQ5MTI5OCwxNy4wMTQwOTQ1IEwzMTIsMTcuMDE0MDk0NSBMMzEyLDI0LjMyNjA1NCBMMjk5LjQ5MTI5OCwyNC4zMjYwNTQgTDI5OS40OTEyOTgsNDIuMyBMMjkxLjg1NTQ2NCw0Mi4zIEwyOTEuODU1NDY0LDIuMzUgWiIgaWQ9IkZpbGwtMiI+PC9wYXRoPgogICAgICAgICAgICAgICAgPHBhdGggZD0iTTI0LjcyNjY2OTcsMjguNjI2NDM4NyBMMjQuNzI2NjY5NywzMi4yMjk2NTYxIEwwLDIwLjY2MzkyOTUgTDAsMTcuNDU2MTQ4NiBMMjQuNzI2NjY5Nyw1Ljg0Mjk2OTY0IEwyNC43MjY2Njk3LDkuNDY4MzMxNDMgTDQuNjQwNjY1NSwxOS4wOTE2NzQgTDI0LjcyNjY2OTcsMjguNjI2NDM4NyBaIE0zMS4xNjcwOTAzLDM3LjE4Njg0OCBMMzEuMTY3MDkwMywwIEwzNC41MDI0NzI3LDAgTDM0LjUwMjQ3MjcsMTQuOTY2NDgwNCBDMzUuOTA2MDM2LDEzLjE5MTc2MTUgMzcuNDc1NDQ3LDExLjg2OTQyMTggMzkuMjE2ODQ4MywxMC45ODM2NDQxIEM0MC45NTgyNDk2LDEwLjExMDUyMDMgNDIuODYyNDI3Myw5LjY2NDQ2NzkzIDQ0LjkzODU5NTQsOS42NjQ0Njc5MyBDNDguNjI0MTAwNyw5LjY2NDQ2NzkzIDUxLjc2OTA2NTMsMTEuMDQzNzUwNCA1NC4zODI3MDI4LDEzLjc5NTk4ODQgQzU2Ljk5MDE5NzksMTYuNTQ4MjI2NCA1OC4yOTU0ODEsMTkuODkyMDM3NCA1OC4yOTU0ODEsMjMuODIxMDk0NCBDNTguMjk1NDgxLDI3LjY5OTUzNTYgNTYuOTgwOTg0MSwzMS4wMTgwMzg2IDU0LjM0Mjc3NjUsMzMuNzYwNzg2MiBDNTEuNzEwNzExNSwzNi41MDY2OTcyIDQ4LjU0MTE3NjgsMzcuODc2NDg5MiA0NC44MzcyNDQsMzcuODc2NDg5MiBDNDIuNzE1MDA3MSwzNy44NzY0ODkyIDQwLjc5MjQwMTgsMzcuNDA1MTI4OSAzOS4wNjk0MjgxLDM2LjQ3MTg5ODggQzM3LjM0NjQ1NDMsMzUuNTM4NjY4NiAzNS44MjYxODM0LDM0LjEzMDkxNDcgMzQuNTAyNDcyNywzMi4yNTQ5NjQgTDM0LjUwMjQ3MjcsMzcuMTg2ODQ4IEwzMS4xNjcwOTAzLDM3LjE4Njg0OCBaIE00NC41NzYxODczLDM0LjU1MTY1OTIgQzQ2LjQ0OTY1MjYsMzQuNTUxNjU5MiA0OC4xNjM0MTI1LDM0LjA3Mzk3MTkgNDkuNzQ4MTc5OSwzMy4xMzEyNTEzIEM1MS4zMjY4MDQ2LDMyLjE4ODUzMDcgNTIuNTg2MDE5LDMwLjg1NjcwMDUgNTMuNTE2NjA5MSwyOS4xNDg0MTQ5IEM1NC40NTY0MTI5LDI3LjQ0MDEyOTIgNTQuOTIzMjQzNiwyNS42MzA2MTE4IDU0LjkyMzI0MzYsMjMuNzE5ODYyNyBDNTQuOTIzMjQzNiwyMS44MTg2MDQgNTQuNDQ3MTk5MiwxOS45OTk1OTYxIDUzLjUwNzM5NTMsMTguMjcyMzI5NSBDNTIuNTY3NTkxNSwxNi41NDgyMjY0IDUxLjMwMjIzNDYsMTUuMjAwNTc4OSA0OS43MDgyNTM1LDE0LjI0MjA0MDggQzQ4LjEyMzQ4NjIsMTMuMjgzNTAyNyA0Ni40MzEyMjUsMTIuODAyNjUxOSA0NC42MjUzMjc0LDEyLjgwMjY1MTkgQzQyLjc4ODcxNzIsMTIuODAyNjUxOSA0MS4wNDczMTU5LDEzLjI4MzUwMjcgMzkuMzk0OTgxLDE0LjI0MjA0MDggQzM3Ljc0NTcxNzQsMTUuMjAwNTc4OSAzNi40NzExNDY4LDE2LjQ5NzYxMDYgMzUuNTg2NjI1NSwxOC4xMjM2NDU0IEMzNC43MDUxNzU1LDE5Ljc1NjAwNzMgMzQuMjU2NzcyMywyMS41ODEzNDIxIDM0LjI1Njc3MjMsMjMuNjI4MTIxNCBDMzQuMjU2NzcyMywyNi43MzQ2NzA1IDM1LjI1MTg1ODgsMjkuMzI1NTcwNCAzNy4yMzg5NjA0LDMxLjQxMzQ3NTEgQzM5LjIyNjA2MiwzMy41MDEzNzk4IDQxLjY3Mzg1MTksMzQuNTUxNjU5MiA0NC41NzYxODczLDM0LjU1MTY1OTIgWiBNNjMuMTM1Nzc4MSwxMC4zNTQxMDkyIEw2Ni41NTcxNTU1LDEwLjM1NDEwOTIgTDY2LjU1NzE1NTUsMTQuMjc2ODM5MiBDNjcuNTc5ODgzMywxMi43MzYyMTg2IDY4LjY1Nzg5MzYsMTEuNTgxNTQ0MSA2OS43ODUwNDQsMTAuODE1OTc5IEM3MC45MjE0MDgxLDEwLjA1MDQxMzkgNzIuMDk3Njk4Niw5LjY2NDQ2NzkzIDczLjMzMjM0MjksOS42NjQ0Njc5MyBDNzQuMjU2NzkwNSw5LjY2NDQ2NzkzIDc1LjI0NTczNDQsOS45NzQ0OTAxNCA3Ni4yOTkxNzQ3LDEwLjU4MTg4MDYgTDc0LjU1MTYzMDksMTMuNDk1NDU2NyBDNzMuODQ4MzEzNiwxMy4xNzI3ODA1IDczLjI1ODYzMjgsMTMuMDI0MDk2NCA3Mi43NzY0NDU4LDEzLjAyNDA5NjQgQzcxLjY2NDY1MTcsMTMuMDI0MDk2NCA3MC41ODY2NDE0LDEzLjQ5NTQ1NjcgNjkuNTQ4NTU3NCwxNC40MzUwMTM4IEM2OC41MTA0NzM0LDE1LjM4NzIyNDkgNjcuNzE4MDg5NywxNi44NTE5MjE3IDY3LjE4MDYyMDIsMTguODM4NTk0NiBDNjYuNzYyOTI5NiwyMC4zNjk3MjQ3IDY2LjU1NzE1NTUsMjMuNDYwNDU2NCA2Ni41NTcxNTU1LDI4LjExMzk1MyBMNjYuNTU3MTU1NSwzNy4xODY4NDggTDYzLjEzNTc3ODEsMzcuMTg2ODQ4IEw2My4xMzU3NzgxLDEwLjM1NDEwOTIgWiBNMTAxLjA4NDE5OCwyOC4yODE2MTgxIEwxMDMuOTAzNjEsMjkuODEyNzQ4MiBDMTAyLjk3OTE2MiwzMS42OTE4NjI0IDEwMS45MTAzNjYsMzMuMTk3Njg0NiAxMDAuNzAwMjkxLDM0LjM1MjM1OTIgQzk5LjQ4MTAwMzQsMzUuNTAzODcwMiA5OC4xMTczNjY0LDM2LjM4MDE1NzUgOTYuNjAzMjM4LDM2Ljk3NDg5NCBDOTUuMDg2MDM4MywzNy41NzU5NTc1IDkzLjM2OTIwNywzNy44NzY0ODkyIDkxLjQ1NTgxNTUsMzcuODc2NDg5MiBDODcuMjA4MjcwNiwzNy44NzY0ODkyIDgzLjg4ODI0NDUsMzYuNDQ2NTkwOCA4MS40OTU3MzczLDMzLjU3NzMwMzYgQzc5LjEwMDE1ODgsMzAuNzA0ODUyOSA3Ny45MDg1MTIxLDI3LjQ2NTQzNzIgNzcuOTA4NTEyMSwyMy44NDY0MDI0IEM3Ny45MDg1MTIxLDIwLjQ0NTY0ODUgNzguOTIyMDI2LDE3LjQwODY5NjIgODAuOTQ5MDU0LDE0Ljc0ODE5OTUgQzgzLjUxMzU1MTUsMTEuMzYzMjYzMSA4Ni45NTY0Mjc3LDkuNjY0NDY3OTMgOTEuMjYyMzI2NSw5LjY2NDQ2NzkzIEM5NS42OTcyMTc5LDkuNjY0NDY3OTMgOTkuMjQ0NTE2OCwxMS40MDQzODg1IDEwMS44OTE5MzgsMTQuODc0NzM5MiBDMTAzLjc4MDc2LDE3LjMyMzI4MiAxMDQuNzM1OTIsMjAuMzc5MjE1MiAxMDQuNzY5NzA0LDI0LjAzOTM3NTQgTDgxLjM1NzUzMDgsMjQuMDM5Mzc1NCBDODEuNDE1ODg0NywyNy4xNzEyMzI0IDgyLjM4NjQwMTEsMjkuNzMwNDk3NCA4NC4yNTA2NTI1LDMxLjcyNjY2MDggQzg2LjEyMTA0NjUsMzMuNzE5NjYwOCA4OC40MjQ0ODczLDM0LjcyMjQ4NzcgOTEuMTcwMTg4OCwzNC43MjI0ODc3IEM5Mi40OTM4OTk1LDM0LjcyMjQ4NzcgOTMuNzg2ODk3NiwzNC40ODUyMjU4IDk1LjAzNjg5ODIsMzQuMDA3NTM4NSBDOTYuMjg2ODk4OCwzMy41MjY2ODc4IDk3LjM1NTY5NTMsMzIuODkzOTg5NCA5OC4yMzEwMDI5LDMyLjEwMzExNjQgQzk5LjEwNjMxMDQsMzEuMzIxNzMzOSAxMDAuMDYxNDcxLDMwLjA0MDUxOTYgMTAxLjA4NDE5OCwyOC4yODE2MTgxIFogTTEwMS4wODQxOTgsMjEuMDU5MzY2IEMxMDAuNjM1Nzk1LDE5LjIxODIxMzYgOTkuOTgxNjE3OSwxNy43NDQwMjY0IDk5LjEzMDg4MDQsMTYuNjQ5NDU4MiBDOTguMjc0MDAwNCwxNS41NDg1NjMgOTcuMTQzNzc4OCwxNC42NTMyOTQ3IDk1Ljc0MDIxNTUsMTMuOTgyNjM0NCBDOTQuMzMzNTgwOSwxMy4zMDg4MTA3IDkyLjg2MjQ1MDEsMTIuOTcwMzE3IDkxLjMxMTQ2NjUsMTIuOTcwMzE3IEM4OC43NTkyNTQxLDEyLjk3MDMxNyA4Ni41NjMzMDcxLDEzLjgyMTI5NjQgODQuNzMyODM5NSwxNS41MTM3NjQ2IEM4My4zOTM3NzI1LDE2Ljc0NDM2MjkgODIuMzc3MTg3MywxOC41OTUwMDU3IDgxLjY5MjI5NzYsMjEuMDU5MzY2IEwxMDEuMDg0MTk4LDIxLjA1OTM2NiBaIE0xMzIuOTQ1MzkyLDI4LjI4MTYxODEgTDEzNS43NjQ4MDQsMjkuODEyNzQ4MiBDMTM0Ljg0MDM1NiwzMS42OTE4NjI0IDEzMy43NzE1NiwzMy4xOTc2ODQ2IDEzMi41NTg0MTQsMzQuMzUyMzU5MiBDMTMxLjM0MjE5NywzNS41MDM4NzAyIDEyOS45Nzg1NiwzNi4zODAxNTc1IDEyOC40NjQ0MzIsMzYuOTc0ODk0IEMxMjYuOTQ3MjMyLDM3LjU3NTk1NzUgMTI1LjIzMDQwMSwzNy44NzY0ODkyIDEyMy4zMTcwMDksMzcuODc2NDg5MiBDMTE5LjA2OTQ2NCwzNy44NzY0ODkyIDExNS43NDk0MzgsMzYuNDQ2NTkwOCAxMTMuMzU2OTMxLDMzLjU3NzMwMzYgQzExMC45NjEzNTMsMzAuNzA0ODUyOSAxMDkuNzY5NzA2LDI3LjQ2NTQzNzIgMTA5Ljc2OTcwNiwyMy44NDY0MDI0IEMxMDkuNzY5NzA2LDIwLjQ0NTY0ODUgMTEwLjc4MzIyLDE3LjQwODY5NjIgMTEyLjgxMDI0OCwxNC43NDgxOTk1IEMxMTUuMzc0NzQ1LDExLjM2MzI2MzEgMTE4LjgxNDU1LDkuNjY0NDY3OTMgMTIzLjEyMzUyLDkuNjY0NDY3OTMgQzEyNy41NTg0MTIsOS42NjQ0Njc5MyAxMzEuMTA1NzExLDExLjQwNDM4ODUgMTMzLjc1MzEzMiwxNC44NzQ3MzkyIEMxMzUuNjQxOTU0LDE3LjMyMzI4MiAxMzYuNTk3MTE0LDIwLjM3OTIxNTIgMTM2LjYzMDg5NywyNC4wMzkzNzU0IEwxMTMuMjE4NzI1LDI0LjAzOTM3NTQgQzExMy4yNzQwMDcsMjcuMTcxMjMyNCAxMTQuMjQ3NTk1LDI5LjczMDQ5NzQgMTE2LjEwODc3NSwzMS43MjY2NjA4IEMxMTcuOTgyMjQsMzMuNzE5NjYwOCAxMjAuMjg1NjgxLDM0LjcyMjQ4NzcgMTIzLjAzMTM4MywzNC43MjI0ODc3IEMxMjQuMzU1MDkzLDM0LjcyMjQ4NzcgMTI1LjY0NTAyLDM0LjQ4NTIyNTggMTI2Ljg5ODA5MiwzNC4wMDc1Mzg1IEMxMjguMTQ4MDkzLDMzLjUyNjY4NzggMTI5LjIxNjg4OSwzMi44OTM5ODk0IDEzMC4wOTIxOTcsMzIuMTAzMTE2NCBDMTMwLjk2NzUwNCwzMS4zMjE3MzM5IDEzMS45MjI2NjQsMzAuMDQwNTE5NiAxMzIuOTQ1MzkyLDI4LjI4MTYxODEgWiBNMTMyLjk0NTM5MiwyMS4wNTkzNjYgQzEzMi40OTY5ODksMTkuMjE4MjEzNiAxMzEuODQyODEyLDE3Ljc0NDAyNjQgMTMwLjk5MjA3NCwxNi42NDk0NTgyIEMxMzAuMTMyMTIzLDE1LjU0ODU2MyAxMjkuMDA0OTczLDE0LjY1MzI5NDcgMTI3LjYwMTQwOSwxMy45ODI2MzQ0IEMxMjYuMTk0Nzc1LDEzLjMwODgxMDcgMTI0LjcyMzY0NCwxMi45NzAzMTcgMTIzLjE3MjY2LDEyLjk3MDMxNyBDMTIwLjYyMDQ0OCwxMi45NzAzMTcgMTE4LjQyNDUwMSwxMy44MjEyOTY0IDExNi41OTQwMzMsMTUuNTEzNzY0NiBDMTE1LjI1MTg5NSwxNi43NDQzNjI5IDExNC4yMzgzODEsMTguNTk1MDA1NyAxMTMuNTUzNDkxLDIxLjA1OTM2NiBMMTMyLjk0NTM5MiwyMS4wNTkzNjYgWiBNMTQwLjc0MDIzNiwxMC4zNTQxMDkyIEwxNTkuODcxMDgsMTAuMzU0MTA5MiBMMTQ1LjExOTg0NSwzNC4xMzA5MTQ3IEwxNTkuMzk1MDM2LDM0LjEzMDkxNDcgTDE1OS4zOTUwMzYsMzcuMTg2ODQ4IEwxMzkuMzUyMDI5LDM3LjE4Njg0OCBMMTU0LjEwMDE5MywxMy4zOTEwNjE1IEwxNDAuNzQwMjM2LDEzLjM5MTA2MTUgTDE0MC43NDAyMzYsMTAuMzU0MTA5MiBaIE0xNjAuODk5OTUsMTAuMzU0MTA5MiBMMTY0LjQ0NzI0OSwxMC4zNTQxMDkyIEwxNzMuNDAzMDI3LDMxLjAyNzUyOTEgTDE4Mi4wODg1MzUsMTAuMzU0MTA5MiBMMTg1LjY1NzMzMywxMC4zNTQxMDkyIEwxNzAuMTE2Nzg1LDQ3IEwxNjYuNTc4Nyw0NyBMMTcxLjYwMzI3MiwzNS4xNjUzNzY2IEwxNjAuODk5OTUsMTAuMzU0MTA5MiBaIE0xODguNzQ3MDE0LDI4LjYyNjQzODcgTDIwOC44MzMwMTksMTkuMDkxNjc0IEwxODguNzQ3MDE0LDkuNDY4MzMxNDMgTDE4OC43NDcwMTQsNS44NDI5Njk2NCBMMjEzLjQ3MzY4NCwxNy40NTYxNDg2IEwyMTMuNDczNjg0LDIwLjY2MzkyOTUgTDE4OC43NDcwMTQsMzIuMjI5NjU2MSBMMTg4Ljc0NzAxNCwyOC42MjY0Mzg3IFoiIGlkPSJGaWxsLTMiPjwvcGF0aD4KICAgICAgICAgICAgPC9nPgogICAgICAgICAgICA8ZyBpZD0iR3JvdXAtMiI+CiAgICAgICAgICAgICAgICA8cGF0aCBkPSJNMCwwIEw1OC4zMzMzMzMzLDAgTDU4LjMzMzMzMzMsNDIuMzg3MDk2OCBMMCw0Mi4zODcwOTY4IEw3LjQzMzQ4NzUxLDIxLjE5MzU0ODQgTDAsMCBaIE0yNi40NjE2OTM1LDI4LjgyMTA1NTggTDI2LjQ2MTY5MzUsMjQuOTA2MDM2IEwxNi40NTY0MDYyLDIxLjE3NzI3MzUgTDI2LjQ2MTY5MzUsMTcuMzg3MDI4IEwyNi40NjE2OTM1LDEzLjQ3MjAwODEgTDEyLjkxOTUzMjcsMTkuMTEwMzYgTDEyLjkxOTUzMjcsMjMuMTgyNzA0IEwyNi40NjE2OTM1LDI4LjgyMTA1NTggWiBNMzEuMDc2MDU5NSwzMi4yNjc3MTk5IEwzOC4xNzU3NDkxLDEwLjEyMTE4NTIgTDM0LjQzMTMzMywxMC4xMjExODUyIEwyNy4zMzE2NDMzLDMyLjI2NzcxOTkgTDMxLjA3NjA1OTUsMzIuMjY3NzE5OSBaIE01Mi41ODc4NTk3LDIzLjE4MjcwNCBMNTIuNTg3ODU5NywxOS4xMTAzNiBMMzkuMDQzOTY5NCwxMy40NzIwMDgxIEwzOS4wNDM5Njk0LDE3LjM4NzAyOCBMNDkuMDUwOTg2MywyMS4xNzcyNzM1IEwzOS4wNDM5Njk0LDI0LjkwNjAzNiBMMzkuMDQzOTY5NCwyOC44MjEwNTU4IEw1Mi41ODc4NTk3LDIzLjE4MjcwNCBaIiBpZD0iQ29tYmluZWQtU2hhcGUiIGZpbGw9IiMxQTk2QzciPjwvcGF0aD4KICAgICAgICAgICAgICAgIDxwYXRoIGQ9Ik0xOC42NjY2NjY3LDMwLjYxMjkwMzIgTDY5LjU2NjUxMjUsMzAuNjEyOTAzMiBMNzcsNTEuODA2NDUxNiBMNjkuNTY2NTEyNSw3MyBMMTguNjY2NjY2Nyw3MyBMMTguNjY2NjY2NywzMC42MTI5MDMyIFogTTMyLjIwMDE3OTksNTkuMzQ3MTU5NSBMMzIuMjAwMTc5OSw1NC42MDAzMTEgTDM1LjUyOTUxMDYsNTQuNjAwMzExIEMzNi4zNzE3ODgsNTQuNTk0ODg2MSAzNy4xMTg5NDE3LDU0LjQ1NzQ1MzUgMzcuNzY0MDUzNiw1NC4xODk4MjE2IEMzOC40MDkxNjU1LDUzLjkxNjc2NDggMzguOTQ4Nzc2NSw1My41NDk2NzUyIDM5LjM4ODA3NTIsNTMuMDc0MDg2MiBDMzkuODI3MzczOSw1Mi41OTg0OTcyIDQwLjE1OTQ0MjIsNTIuMDUyMzgzNiA0MC4zODI1NTA2LDUxLjQzMzkzNyBDNDAuNjA1NjU5LDUwLjgxMzY4MjIgNDAuNzE4MDc4LDUwLjE1MDAyNzUgNDAuNzE4MDc4LDQ5LjQ0NjU4OTggQzQwLjcxODA3OCw0OC43MzQxMTA0IDQwLjYwNTY1OSw0OC4wNjY4MzkyIDQwLjM4MjU1MDYsNDcuNDQ0Nzc2IEM0MC4xNTk0NDIyLDQ2LjgyNDUyMTEgMzkuODI3MzczOSw0Ni4yNzQ3OTA4IDM5LjM4ODA3NTIsNDUuNzk5MjAxOCBDMzguOTQ4Nzc2NSw0NS4zMjM2MTI4IDM4LjQwOTE2NTUsNDQuOTUxMDk4MiAzNy43NjQwNTM2LDQ0LjY3OTg0OTcgQzM3LjExODk0MTcsNDQuNDEyMjE3OSAzNi4zNzE3ODgsNDQuMjcyOTc3IDM1LjUyOTUxMDYsNDQuMjY5MzYwMyBMMjcuODMzMTM1Nyw0NC4yNjkzNjAzIEwyNy44MzMxMzU3LDU5LjM0NzE1OTUgTDMyLjIwMDE3OTksNTkuMzQ3MTU5NSBaIE0zNC45Njc0MTU4LDUwLjYyMDE5MTYgTDMyLjIwMDE3OTksNTAuNjIwMTkxNiBMMzIuMjAwMTc5OSw0OC4yNDc2NzE1IEwzNC45Njc0MTU4LDQ4LjI0NzY3MTUgQzM1LjIxNjQ2Nyw0OC4yNDc2NzE1IDM1LjQzOTU3NTQsNDguMjg5MjYyOSAzNS42MzY3NDEsNDguMzc2MDYyNCBDMzUuODM1NjM2MSw0OC40NjI4NjE5IDM1Ljk5MTI5MzEsNDguNTk0ODY5NSAzNi4xMDg5MDA2LDQ4Ljc3MjA4NTIgQzM2LjIyNDc3ODYsNDguOTQ5MzAwOSAzNi4yODM1ODI0LDQ5LjE3MzUzMyAzNi4yODUzMTE5LDQ5LjQ0NjU4OTggQzM2LjI4MzU4MjQsNDkuNzA4Nzk2NyAzNi4yMjQ3Nzg2LDQ5LjkyNzYwMzggMzYuMTA4OTAwNiw1MC4xMDEyMDI4IEMzNS45OTEyOTMxLDUwLjI3NDgwMTggMzUuODM1NjM2MSw1MC40MDY4MDk0IDM1LjYzNjc0MSw1MC40OTM2MDg5IEMzNS40Mzk1NzU0LDUwLjU4MDQwODUgMzUuMjE2NDY3LDUwLjYyMDE5MTYgMzQuOTY3NDE1OCw1MC42MjAxOTE2IFogTTQ4LjYwOTg4ODksNTkuMzQ3MTU5NSBDNDkuNzQ0NDU1Niw1OS4zNDE3MzQ2IDUwLjc5MjU0NjMsNTkuMTc3MTc3MSA1MS43NDcyNDI2LDU4Ljg0NjI1NCBDNTIuNzA1Mzk4MSw1OC41MDk5MDU5IDUzLjUzOTAyNzksNTguMDE5ODUwMyA1NC4yNDgxMzIxLDU3LjM3NjA4NzIgQzU0Ljk1NzIzNjMsNTYuNzMyMzI0MSA1NS41MDg5NTQsNTUuOTQwMjc4NSA1NS45MDE1NTU2LDU1LjAwNzE4MzcgQzU2LjI5NDE1NzIsNTQuMDcyMjgwNiA1Ni40OTMwNTIzLDUzLjAwMTc1MzMgNTYuNDk5OTcwNCw1MS43OTc0MSBDNTYuNDkzMDUyMyw1MC41OTEyNTg0IDU2LjI5NDE1NzIsNDkuNTIwNzMxIDU1LjkwMTU1NTYsNDguNTkxMjUyOSBDNTUuNTA4OTU0LDQ3LjY1NjM0OTggNTQuOTU3MjM2Myw0Ni44Njk3MjkyIDU0LjI0ODEzMjEsNDYuMjI5NTgyNyBDNTMuNTM1NTY4OSw0NS41ODQwMTEzIDUyLjY5ODQ4LDQ1LjA5NzU3MjQgNTEuNzQwMzI0Niw0NC43NjY2NDkyIEM1MC43Nzg3MTAxLDQ0LjQzOTM0MjcgNDkuNzI4ODg5OSw0NC4yNjkzNjAzIDQ4LjU4NzQwNTEsNDQuMjY5MzYwMyBMNDIuMTQ0OTM0LDQ0LjI2OTM2MDMgTDQyLjE0NDkzNCw1OS4zNDcxNTk1IEw0OC42MDk4ODg5LDU5LjM0NzE1OTUgWiBNNDguNTg3NDA1MSw1NS4zNjg4NDg0IEw0Ni41MTE5NzgyLDU1LjM2ODg0ODQgTDQ2LjUxMTk3ODIsNDguMjQ3NjcxNSBMNDguNjA5ODg4OSw0OC4yNDc2NzE1IEM0OS4zODY0NDQ1LDQ4LjI1MTI4ODEgNTAuMDMxNTU2NCw0OC40MTA0MjA2IDUwLjU0MzQ5NSw0OC43MTQyMTg5IEM1MS4wNTU0MzM3LDQ5LjAxOTgyNTUgNTEuNDM3NjU4MSw0OS40Mzc1NDgyIDUxLjY5MDE2ODQsNDkuOTcyODExOCBDNTEuOTQyNjc4Nyw1MC41MDQ0NTg5IDUyLjA2NzIwNDMsNTEuMTEwMjQ3MiA1Mi4wNjcyMDQzLDUxLjc5NzQxIEM1Mi4wNjcyMDQzLDUyLjI3NDgwNzMgNTEuOTg3NjQ2Myw1Mi43MjY4ODgxIDUxLjgzMDI1OTcsNTMuMTU3MjY5MSBDNTEuNjc0NjAyNyw1My41ODIyMjUgNTEuNDQ4MDM1Myw1My45NjM3ODEyIDUxLjE0NTM2ODgsNTQuMjk0NzA0NCBDNTAuODQ2MTYxNCw1NC42MjU2Mjc1IDUwLjQ4Mjk2MTcsNTQuODg2MDI2MSA1MC4wNTQwNDAyLDU1LjA3NzcwODQgQzQ5LjYyMTY1OTYsNTUuMjY1Nzc0IDQ5LjEzNTY2MzcsNTUuMzY1MjMxOCA0OC41ODc0MDUxLDU1LjM2ODg0ODQgWiBNNjIuNDIzNTg0OCw1OS4zNDcxNTk1IEw2Mi40MjM1ODQ4LDUzLjcxNzg0OTMgTDY4Ljg0NTMwMTYsNTMuNzE3ODQ5MyBMNjguODQ1MzAxNiw0OS43Mzk1MzgxIEw2Mi40MjM1ODQ4LDQ5LjczOTUzODEgTDYyLjQyMzU4NDgsNDguMjQ3NjcxNSBMNjguOTk1NzcwMSw0OC4yNDc2NzE1IEw2OC45OTU3NzAxLDQ0LjI2OTM2MDMgTDU4LjA1NjU0MDYsNDQuMjY5MzYwMyBMNTguMDU2NTQwNiw1OS4zNDcxNTk1IEw2Mi40MjM1ODQ4LDU5LjM0NzE1OTUgWiIgaWQ9IkNvbWJpbmVkLVNoYXBlIiBmaWxsPSIjRTY0NzU5Ij48L3BhdGg+CiAgICAgICAgICAgIDwvZz4KICAgICAgICA8L2c+CiAgICA8L2c+Cjwvc3ZnPgo=&quot; alt=&quot;BreezyPDF&quot;&gt;
+      &lt;/a&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;right text&quot;&gt;
+       Page &lt;span class=&quot;pageNumber&quot;&gt;&lt;/span&gt; of &lt;span class=&quot;totalPages&quot;&gt;&lt;/span&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+">
+  <meta name="breezy-pdf-headerTemplate" content="&nbsp;">
+  <meta name="breezy-pdf-filename" content="breezy-pdf-dashboard-example.pdf">
+
+    <link rel="shortcut icon" href="https://ruby.demo.breezypdf.com/reports/img/favicon.png">
+    <title>Widget Builders</title>
+    <link rel="stylesheet" href="https://ruby.demo.breezypdf.com/reports/css/app.min.css" type="text/css"/>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js" integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+" crossorigin="anonymous"></script>
+  </head>
+  <body>
+
+    <div class="mai-wrapper">
+
+      <div class="main-content container pt-4 pt-md-0">
+
+  <div class="row">
+    <div class="col-7">
+      <div class="widget widget-fullwidth user-develop-chart">
+        <div class="widget-head">
+          <span class="title">Development Activity</span>
+        </div>
+        <div class="widget-chart-container">
+          <div id="develop-chart-legend" class="legend-container"></div>
+          <div id="develop-chart" style="height: 225px;"></div>
+        </div>
+      </div>
+    </div>
+    <div class="col-5">
+      <div class="widget-indicators">
+        <div class="indicator-item">
+          <div class="indicator-item-icon">
+            <div class="icon"><span class="fas fa-chart-line"></span></div>
+          </div>
+          <div class="indicator-item-value"><span data-toggle="counter" data-end="36" class="indicator-value-counter">0</span>
+            <div class="indicator-value-title">Today's Orders</div>
+          </div>
+        </div>
+        <div class="indicator-item">
+          <div class="indicator-item-icon">
+            <div class="icon"><span class="fas fa-chart-pie"></span></div>
+          </div>
+          <div class="indicator-item-value"><span data-toggle="counter" data-end="157" class="indicator-value-counter">0</span>
+            <div class="indicator-value-title">Support Tickets</div>
+          </div>
+        </div>
+        <div class="indicator-item">
+          <div class="indicator-item-icon">
+            <div class="icon"><span class="fas fa-chart-area"></span></div>
+          </div>
+          <div class="indicator-item-value"><span data-toggle="counter" data-decimals="1" data-end="17.9" class="indicator-value-counter">0</span>
+            <div class="indicator-value-title">Download Files</div>
+          </div>
+        </div>
+        <div class="indicator-item">
+          <div class="indicator-item-icon">
+            <div class="icon"><span class="fas fa-shopping-cart"></span></div>
+          </div>
+          <div class="indicator-item-value"><span data-toggle="counter" data-decimals="2" data-end="78,450" data-prefix="$" class="indicator-value-counter">0</span>
+            <div class="indicator-value-title">Total Purchases</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row page-break-after">
+    <div class="col-12">
+      <div class="widget widget-fullwidth week-chart">
+        <div class="widget-head mb-0 mb-lg-5"><span class="title">Week Activity</span></div>
+        <div class="widget-chart-container">
+          <div id="week-chart" style="height: 215px;"></div>
+        </div>
+        <div class="row widget-info">
+          <div class="col-6 counter-block"><span data-toggle="counter" data-end="735" class="counter"></span><span class="title">New Users</span></div>
+          <div class="col-6 counter-block"><span data-toggle="counter" data-end="73" data-suffix="%" class="counter">0</span><span class="title">More Visits</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row mt-1">
+    <div class="col-6">
+      <div class="user-stats">
+        <div class="user-stats-id mb-3">
+          <div class="user-stats-avatar"><img src="https://ruby.demo.breezypdf.com/reports/img/avatars/img3.jpg" alt="avatar"></div>
+          <div class="user-stats-info"><span class="user-stats-name">Justin Adams</span><span class="user-stats-position">Sales</span></div>
+        </div>
+        <div class="user-stats-indicators">
+          <div class="user-stats-indicator"><span class="user-stats-indicator-title">Premium Purchases</span><span data-toggle="counter" data-end="173" class="user-stats-indicator-counter">0</span></div>
+          <div class="user-stats-indicator"><span class="user-stats-indicator-title">Standard Plans </span><span data-toggle="counter" data-end="367" class="user-stats-indicator-counter">0</span></div>
+          <div class="user-stats-indicator"><span class="user-stats-indicator-title">Services</span><span data-toggle="counter" data-end="724" class="user-stats-indicator-counter">0</span></div>
+          <div class="user-stats-indicator"><span class="user-stats-indicator-title">Total Sales</span><span data-toggle="counter" data-end="1264" class="user-stats-indicator-counter">0</span></div>
+        </div>
+        <div class="user-stats-milestone"><span>Current Progress</span>
+          <div class="progress">
+            <div style="width: 45%" class="progress-bar progress-bar-primary"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-6">
+      <div class="widget widget-fullwidth ads-chart">
+        <div class="widget-head mb-0 pb-0"><span class="title">Advertisement</span></div>
+        <div class="ads-resume">
+          <div class="ads-info pb-0">
+            <div class="ads-progress"><span data-toggle="counter" data-end="55" data-suffix="%" class="ads-progress-counter">0</span><span class="ads-progress-title">Advance</span>
+              <div class="progress">
+                <div style="width: 55%" class="progress-bar progress-bar-primary"></div>
+              </div>
+            </div>
+            <div id="ads-chart-legend" class="ads-legend"></div>
+          </div>
+          <div class="ads-users">
+            <div class="widget-chart-container">
+              <div id="users-chart" style="height: 153px;"></div>
+              <div class="users-chart-counter"><span data-toggle="counter" data-end="1207" class="users-counter">0</span><span class="users-title">New Users</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="widget-chart-container">
+          <div id="ads-chart" style="height: 229px;"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row page-break-avoid">
+    <div class="col-6">
+      <div class="widget widget-fullwidth earnings">
+        <div class="widget-head mb-0 pb-0">
+        </div>
+        <div class="earnings-resume">
+          <div class="earnings-value earnings-value-big mb-4"><span data-toggle="counter" data-end="127.95" data-decimals="2" data-prefix="$" class="earnings-counter">0</span><span class="earnings-title">Advance</span></div>
+          <div class="earnings-value"><span data-toggle="counter" data-end="527" data-decimals="2" data-prefix="$" class="earnings-counter">0</span><span class="earnings-title">Estimated</span></div>
+          <div class="earnings-value"><span data-toggle="counter" data-end="79" data-suffix="%" class="earnings-counter">0</span><span class="earnings-title">More Sales</span></div>
+        </div>
+        <div class="earnings-chart">
+          <div id="earnings-chart" style="height: 156px;"></div>
+        </div>
+      </div>
+    </div>
+    <div class="col-6">
+      <div class="usage usage-dark p-4">
+        <div class="usage-head"><span class="usage-head-title">Download Files</span>
+        </div>
+        <div class="usage-resume">
+          <div class="usage-data"><span data-toggle="counter" data-end="73.6" data-decimals="1" data-suffix="%" class="usage-counter"></span><span class="usage-title">Download Files</span><span class="usage-detail">13,5 MB</span></div>
+          <div class="usage-icon"><span class="icon fas fa-chart-area"></span></div>
+        </div>
+      </div>
+      <div class="usage usage-primary p-4">
+        <div class="usage-head"><span class="usage-head-title">Server CPU</span>
+        </div>
+        <div class="usage-resume">
+          <div class="usage-data"><span data-toggle="counter" data-end="33.9" data-decimals="1" data-suffix="%" class="usage-counter"></span><span class="usage-title">Total Usage</span><span class="usage-detail">178 MB</span></div>
+          <div class="usage-icon"><span class="icon fas fa-tachometer-alt"></span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row page-break-before">
+    <div class="col-12 align-self-stretch d-flex">
+      <div class="widget widget-fullwidth todo-list align-self-stretch w-100">
+        <div class="widget-head"><span class="title">Todo List</span></div>
+        <div class="todo-list-container">
+          <ul class="todo-tasks">
+            <li class="todo-task">
+              <label class="custom-control custom-checkbox">
+                <input type="checkbox" checked="true" class="custom-control-input"><span class="custom-control-label">Pellentesque habitant morbi tristique senectus et netus et.</span>
+              </label>
+            </li>
+            <li class="todo-task">
+              <label class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input"><span class="custom-control-label">Sed id interdum nunc. Ut sodales dolor non ultricies mattis. </span>
+              </label>
+            </li>
+            <li class="todo-task">
+              <label class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input"><span class="custom-control-label">Pellentesque habitant morbi tristique senectus et netus et.</span>
+              </label>
+            </li>
+            <li class="todo-task">
+              <label class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input"><span class="custom-control-label">Sed id interdum nunc. Ut sodales dolor non ultricies mattis. </span>
+              </label>
+            </li>
+            <li class="todo-task">
+              <label class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input"><span class="custom-control-label">Sed id interdum nunc. Ut sodales dolor non ultricies mattis. </span>
+              </label>
+            </li>
+            <li class="todo-task">
+              <label class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input"><span class="custom-control-label">Pellentesque habitant morbi tristique senectus et netus et.</span>
+              </label>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row ">
+    <div class="col-12">
+      <div class="project-list">
+        <div class="project-list-title mt-5">Project Progress</div>
+        <div class="project-item pdf">
+          <div class="project-item-title"><span class="name">Product Design</span><span class="description">Create the new product design</span></div>
+          <div class="project-item-user">
+            <div class="user-avatar"><img src="https://ruby.demo.breezypdf.com/reports/img/avatars/img4.jpg" alt="avatar"></div>
+            <div class="user-info"><span class="name">Marshal Hogan</span><span class="position description">Product designer</span></div>
+          </div>
+          <div class="project-item-state"><span class="name">In Progress</span><span class="description">3D modeling</span></div>
+          <div class="project-item-date"><span class="date">May 6, 2017</span><span class="time description">8:30</span></div>
+          <div class="project-item-progress"><span class="description">50%</span>
+            <div class="progress">
+              <div style="width: 50%" class="progress-bar progress-bar-primary"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row page-break-avoid">
+    <div class="col-12">
+      <div class="project-list">
+        <div class="project-item pdf">
+          <div class="project-item-title"><span class="name">Concept Design</span><span class="description">Create the concept</span></div>
+          <div class="project-item-user">
+            <div class="user-avatar"><img src="https://ruby.demo.breezypdf.com/reports/img/avatars/img1.jpg" alt="avatar"></div>
+            <div class="user-info"><span class="name">Ryan Lawrence</span><span class="position description">Marketing</span></div>
+          </div>
+          <div class="project-item-state"><span class="name">Completed</span><span class="description">Collection concept</span></div>
+          <div class="project-item-date"><span class="date">April 22, 2017</span><span class="time description">14:45</span></div>
+          <div class="project-item-progress"><span class="description">100%</span>
+            <div class="progress">
+              <div style="width: 100%" class="progress-bar progress-bar-primary"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row page-break-avoid">
+    <div class="col-12">
+      <div class="project-list">
+        <div class="project-item pdf">
+          <div class="project-item-title"><span class="name">Product Development</span><span class="description">3D printing</span></div>
+          <div class="project-item-user">
+            <div class="user-avatar"><img src="https://ruby.demo.breezypdf.com/reports/img/avatars/img2.jpg" alt="avatar"></div>
+            <div class="user-info"><span class="name">Benji Miller</span><span class="position description">3D printer</span></div>
+          </div>
+          <div class="project-item-state"><span class="name">Waiting</span><span class="description">Waiting for 3D design</span></div>
+          <div class="project-item-date"><span class="date">April 15, 2017</span><span class="time description">10:00</span></div>
+          <div class="project-item-progress"><span class="description">0%</span>
+            <div class="progress">
+              <div style="width: 0%" class="progress-bar progress-bar-primary"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+    </div>
+    <script src="https://ruby.demo.breezypdf.com/reports/lib/jquery/jquery.min.js" type="text/javascript"></script>
+    <script src="https://ruby.demo.breezypdf.com/reports/lib/bootstrap/dist/js/bootstrap.bundle.min.js" type="text/javascript"></script>
+    <script src="https://ruby.demo.breezypdf.com/reports/js/app.js" type="text/javascript"></script>
+    <script src="https://ruby.demo.breezypdf.com/reports/lib/jquery-flot/jquery.flot.min.js" type="text/javascript"></script>
+    <script src="https://ruby.demo.breezypdf.com/reports/lib/jquery-flot/jquery.flot.pie.min.js" type="text/javascript"></script>
+    <script src="https://ruby.demo.breezypdf.com/reports/lib/jquery-flot/jquery.flot.time.min.js" type="text/javascript"></script>
+    <script src="https://ruby.demo.breezypdf.com/reports/lib/jquery-flot/jquery.flot.resize.min.js" type="text/javascript"></script>
+    <script src="https://ruby.demo.breezypdf.com/reports/lib/jquery-flot/plugins/curvedLines.min.js" type="text/javascript"></script>
+    <script src="https://ruby.demo.breezypdf.com/reports/lib/jquery-flot/plugins/jquery.flot.tooltip.min.js" type="text/javascript"></script>
+    <script src="https://ruby.demo.breezypdf.com/reports/lib/countup/countUp.min.js" type="text/javascript"></script>
+    <script src="https://ruby.demo.breezypdf.com/reports/js/app-dashboard.js" type="text/javascript"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        //initialize the javascript
+        window.pdf = true;
+        App.init();
+        App.dashboard();
+        setTimeout(function() {
+          window.pdfRenderReady = true
+        }, 250)
+
+      });
+    </script>
+  </body>
+</html>

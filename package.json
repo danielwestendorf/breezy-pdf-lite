@@ -1,0 +1,33 @@
+{
+  "name": "breezy-pdf-lite",
+  "version": "0.0.1",
+  "description": "Render HTML to a PDF with Google Chrome, via an HTTP request",
+  "main": "index.js",
+  "author": "Daniel Westendorf",
+  "license": "GNUv3",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "debug": "^3.1.0",
+    "express": "^4.16.3",
+    "html-pdf-chrome": "^0.5.0",
+    "jsdom": "^11.11.0"
+  },
+  "devDependencies": {
+    "coveralls": "^3.0.0",
+    "eslint": "^4.19.0",
+    "eslint-config-standard": "^11.0.0",
+    "eslint-plugin-import": "^2.9.0",
+    "eslint-plugin-node": "^6.0.1",
+    "eslint-plugin-promise": "^3.7.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "istanbul": "^0.4.5",
+    "node-fetch": "^2.1.1",
+    "nyc": "^11.6.0",
+    "teenytest": "^5.1.1",
+    "testdouble": "^3.5.2"
+  },
+  "scripts": {
+    "test": "teenytest 'test/**/*-test.js' --helper test/helper.js && ./node_modules/.bin/eslint *.js, **/**.js",
+    "testncov": "nyc --reporter=lcov --reporter=text teenytest 'test/**/*-test.js' --helper test/helper.js && ./node_modules/.bin/eslint *.js, **/**.js"
+  }
+}
