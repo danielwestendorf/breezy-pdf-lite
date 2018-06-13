@@ -10,7 +10,8 @@ before_install:
     do
       sleep 1
     done
+  - which google-chrome-stable
 script:
 - npm run testncov
-after_success:
-- cat ./node_modules/lcov.info | ./node_modules/coveralls/bin/coveralls.js
+# after_success:
+# - cat ./node_modules/lcov.info | ./node_modules/coveralls/bin/coveralls.js
