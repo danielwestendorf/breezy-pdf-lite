@@ -29,9 +29,11 @@ if (process.env.GOOGLE_CHROME_SHIM !== undefined) {
   })
 }
 
-console.log('Starting web server...')
+setTimeout(function() {
+  new Server({
+    port:  process.env.PORT || 5001,
+    privateToken: process.env.PRIVATE_TOKEN
+  }).start()
+}, 4000)
 
-new Server({
-  port:  process.env.PORT || 5001,
-  privateToken: process.env.PRIVATE_TOKEN
-}).start()
+console.log('Starting web server...')
