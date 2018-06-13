@@ -6,16 +6,14 @@
 
 A quick to stand up HTML to PDF service powered by headless Google Chrome. Deploy with one click and start generating PDF's from your web application or command line.
 
-## Looking for something more robust?
+### Looking for something more robust?
 BreezyPDF Lite was extracted from [BreezyPDF](https://breezypdf.com) as a light weight alternative for new apps. As your software grows, a 1:1 server instance/render ratio will become slow and limiting.
 
-See [BreezyPDF](https://breezypdf.com) for a Hosted and Enterprise versions.
+See [BreezyPDF.com](https://breezypdf.com) for Hosted and Enterprise versions which prioritize performance, redundancy, and usability.
 
-### How does it work?
+### Getting Started
 
-1. Submit a HTML slug via a POST request, get a PDF of that HTML in return.
-
-#### 1. Submit HTML to be converted
+##### 1. Submit HTML to be converted
 This is done with a `POST` request the the web server. We'll use some example HTML for this example.
 ```sh
   curl -X POST -H 'Authorization: Bearer PRIVATE_TOKEN_DEFINED_IN_SERVER_ENVIRONMENT' \
@@ -26,7 +24,7 @@ This is done with a `POST` request the the web server. We'll use some example HT
 
 This will create the PDF in the current directory by the name of `example.pdf`.
 
-2. Configure with `meta` tags (optional)
+##### 2. Configure with `meta` tags (optional)
 All configuration for the rendering of your PDF can be configured by meta tags within the HTML you submit. Simply insert the needed meta tag into the head or body of the HTML.
 
 ```html
@@ -43,10 +41,10 @@ All configuration for the rendering of your PDF can be configured by meta tags w
 
 View the all the configuration options and their documentation [here](https://docs.breezypdf.com/metadata).
 
-##### 2.a Print Options
+###### 2.a Print Options
 There are a number of options for how you want the PDF to be rendered, including height, width, margins, footers, and headers.
 
-##### 2.b Completion Triggers
+###### 2.b Completion Triggers
 You might be rendering a Javascript heavy page, so it's helpful to let `chrome` know when the page is done rendering and ready to be converted to PDF. The default completion trigger is a timer of 5000ms.
 
 
