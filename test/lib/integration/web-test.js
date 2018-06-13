@@ -41,7 +41,12 @@ module.exports = {
         },
 
         async bodyIsBuffer(done) {
-          let buffer = await this.response.buffer()
+          let buffer
+          try {
+            buffer = await this.response.buffer()
+          } catch (error) {
+            console.log(error)
+          }
 
           assert(Buffer, buffer.constructor)
           done()
@@ -67,7 +72,12 @@ module.exports = {
         },
 
         async setsErrorMessage(done) {
-          let text = await this.response.text()
+          let text
+          try {
+            text = await this.response.text()
+          } catch (error) {
+            console.log(error)
+          }
 
           assert(text.match('Invalid Private Token'))
           done()
@@ -102,7 +112,12 @@ module.exports = {
         },
 
         async setsErrorMessage(done) {
-          let text = await this.response.text()
+          let text
+          try {
+            text = await this.response.text()
+          } catch (error) {
+            console.log(error)
+          }
 
           assert(text.match('Encountered an error'))
           done()
