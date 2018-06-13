@@ -23,6 +23,10 @@ if (process.env.GOOGLE_CHROME_SHIM !== undefined) {
     console.error(`Chrome process closed with code ${code}`);
     process.exit(code);
   });
+
+  chrome.stdout.on('data', (data) => {
+    console.log(data.toString())
+  })
 }
 
 console.log('Starting web server...')
