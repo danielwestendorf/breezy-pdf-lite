@@ -1,12 +1,8 @@
 const { spawn } = require('child_process')
 const Server    = require('./lib/server')
 
-let wait = 0
-
 if (process.env.GOOGLE_CHROME_SHIM !== undefined) {
   console.log('Starting Google Chrome')
-
-  wait = 5000
   const chrome = spawn(
     process.env.GOOGLE_CHROME_SHIM,
     [
@@ -35,9 +31,7 @@ if (process.env.GOOGLE_CHROME_SHIM !== undefined) {
 
 console.log('Starting web server...')
 
-setTimeout(() => {
-  new Server({
-    port:  process.env.PORT || 5001,
-    privateToken: process.env.PRIVATE_TOKEN
-  }).start()
-}, wait)
+new Server({
+  port:  process.env.PORT || 5001,
+  privateToken: process.env.PRIVATE_TOKEN
+}).start()

@@ -27,7 +27,7 @@ module.exports = {
     server = spawn('node', ['index.js'], { env: newEnv })
     server.stdout.on('data', (data) => {
       if (`${data}`.match('Listening')) {
-        done()
+        setTimeout(done, 5000) // Wait for Google Chrome to start
       } else {
         console.log(data.toString())
       }
