@@ -19,7 +19,7 @@ if (process.env.GOOGLE_CHROME_SHIM !== undefined) {
     ]
   )
 
-  chrome.on('close', async (code) => {
+  chrome.on('close', (code) => {
     console.error(`Chrome process closed with code ${code}`);
     process.exit(code);
   });
