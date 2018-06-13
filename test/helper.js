@@ -9,10 +9,6 @@ global.server = {
   token: 'apisecret1234'
 }
 
-function timeout(ms) {
-  return new Promise(resolve => setTimeout(resolve, ms))
-}
-
 module.exports = {
   beforeEach: function() {
   },
@@ -28,11 +24,10 @@ module.exports = {
 
     server.process = spawn('node', ['index.js'], { env: newEnv })
 
-    server.process.stdout.on('data', async (data) => {
+    server.process.stdout.on('data', (data) => {
       console.log(data.toString())
 
       if (data.toString().match('Listening')) {
-        await timeout(5000)
         done()
       }
     })
