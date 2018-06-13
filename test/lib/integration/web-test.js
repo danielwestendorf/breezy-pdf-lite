@@ -1,11 +1,9 @@
 const assert    = require('assert')
 const fetch     = require('node-fetch')
-const { spawn } = require('child_process')
 
-const port  = 9890,
-      token = 'apisecret1234'
+const port  = server.port,
+      token = server.token
 
-let server;
 const htmlString = `
   <html>
     <head>
@@ -19,25 +17,6 @@ const htmlString = `
 `.trim()
 
 module.exports = {
-  async beforeAll(done) {
-    const newEnv     = process.env
-    newEnv.PORT      = port
-    newEnv.PRIVATE_TOKEN = token
-
-    server = spawn('node', ['index.js'], { env: newEnv })
-    server.stdout.on('data', (data) => {
-      console.log(data.toString())
-
-      if (data.toString().match('Listening')) {
-       done()
-      }
-    })
-  },
-
-  afterAll() {
-    server.kill()
-  },
-
   render: {
     html: {
       successful: {
