@@ -4,3 +4,4 @@ coverage/
 .nyc*
 personal.Procfile
 example.pdf
+yarn-error.log
