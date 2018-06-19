@@ -4,6 +4,7 @@ let Render
 const htmlString = `
   <html>
     <head>
+      <meta name='breezy-pdf-filename' content='fancyfilename'/>
       <meta name='breezy-pdf-width' content='10'/>
     </head>
     <body>
@@ -38,5 +39,15 @@ module.exports = {
   toPdf() {
     td.when(this.htmlPdf.create(htmlString, td.matchers.isA(Object))).thenReturn(true)
      assert.equal(true, new Render(htmlString).toPdf())
+  },
+
+  filename: {
+    specified() {
+      assert.equal('fancyfilename.pdf', new Render(htmlString).filename())
+    },
+
+    notSpecified() {
+      assert(new Render('').filename().match(/\.pdf$/))
+    }
   }
 }
