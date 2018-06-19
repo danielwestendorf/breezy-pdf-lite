@@ -7,6 +7,7 @@ const port  = server.port,
 const htmlString = `
   <html>
     <head>
+      <meta name='breezy-pdf-filename' content='fancyfilename'/>
       <meta name='breezy-pdf-width' content='10'/>
     </head>
     <body>
@@ -50,6 +51,10 @@ module.exports = {
 
           assert(Buffer, buffer.constructor)
           done()
+        },
+
+        contentDisposition() {
+          assert.equal(this.response.headers.get('content-disposition'), 'attachment; filename="fancyfilename.pdf"')
         }
       },
 
