@@ -56,6 +56,15 @@ You might be rendering a Javascript heavy page, so it's helpful to let `chrome` 
 
 1. Click the deployment button to get the system running on Heroku
 
+### Clients
+
+- [Ruby/Rack/Rails](https://github.com/danielwestendorf/breezy_pdf_lite-ruby)
+- [Node.js](https://github.com/danielwestendorf/breezy-pdf-lite/issues/4)
+- [Browserside JS](https://github.com/danielwestendorf/breezy-pdf-lite/issues/5)
+- [Java](https://github.com/danielwestendorf/breezy-pdf-lite/issues/6)
+- [Swift](https://github.com/danielwestendorf/breezy-pdf-lite/issues/7)
+- [Python](https://github.com/danielwestendorf/breezy-pdf-lite/issues/8)
+- [PHP](https://github.com/danielwestendorf/breezy-pdf-lite/issues/9)
 
 #### Non-Heroku
 
