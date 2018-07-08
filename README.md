@@ -59,13 +59,13 @@ You might be rendering a Javascript heavy page, so it's helpful to let `chrome` 
 ### Clients
 
 - [Ruby/Rack/Rails](https://github.com/danielwestendorf/breezy_pdf_lite-ruby)
+- [PHP](https://github.com/jitendra-1217/breezy-pdf-lite-php)
 - [Node.js](https://github.com/danielwestendorf/breezy-pdf-lite/issues/4)
 - [Browserside JS](https://github.com/danielwestendorf/breezy-pdf-lite/issues/5)
 - [Java](https://github.com/danielwestendorf/breezy-pdf-lite/issues/6)
 - [Swift](https://github.com/danielwestendorf/breezy-pdf-lite/issues/7)
 - [Python](https://github.com/danielwestendorf/breezy-pdf-lite/issues/8)
-- [PHP](https://github.com/jitendra-1217/breezy-pdf-lite-php)
-
+- [Go](https://github.com/danielwestendorf/breezy-pdf-lite/issues/10)
 #### Non-Heroku
 
 1. Install node & yarn
