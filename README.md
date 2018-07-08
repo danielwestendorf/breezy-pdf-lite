@@ -64,7 +64,7 @@ You might be rendering a Javascript heavy page, so it's helpful to let `chrome` 
 - [Java](https://github.com/danielwestendorf/breezy-pdf-lite/issues/6)
 - [Swift](https://github.com/danielwestendorf/breezy-pdf-lite/issues/7)
 - [Python](https://github.com/danielwestendorf/breezy-pdf-lite/issues/8)
-- [PHP](https://github.com/danielwestendorf/breezy-pdf-lite/issues/9)
+- [PHP](https://github.com/jitendra-1217/breezy-pdf-lite-php)
 
 #### Non-Heroku
 
