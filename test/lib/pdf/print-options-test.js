@@ -98,7 +98,7 @@ module.exports = {
       },
 
       specified() {
-        const options = { landscape: 'true' }
+        const options = { landscape: 1 }
 
         assert.deepEqual(true, new PrintOptions(options).build().landscape)
       }

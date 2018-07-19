@@ -32,5 +32,9 @@
   },
   "teenytest": {
     "timeout": 10000
+  },
+  "nyc": {
+    "exclude": ["index.js"],
+    "include": ["lib/**/*.js"]
   }
 }
