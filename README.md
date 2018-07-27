@@ -78,7 +78,7 @@ Set the Environment/Heroku Config Vars
 
 | ENV Variable               | Default Value      | Description                                                |
 | -------------              |:-------------:     | -----                                                      |
-| PRIVATE_API_TOKEN          | generated secret   | A private key for accessing the API.                       |
+| PRIVATE_TOKEN              | generated secret   | A private key for accessing the API.                       |
 
 
 
