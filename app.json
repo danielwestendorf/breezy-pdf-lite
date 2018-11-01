@@ -10,6 +10,7 @@
   ],
   "scripts": {
   },
+  "stack": "heroku-16",
   "repository": "https://github.com/danielwestendorf/breezy-pdf-lite",
   "env": {
     "PRIVATE_TOKEN": {
