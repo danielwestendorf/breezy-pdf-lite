@@ -27,7 +27,7 @@
   "image": "heroku/nodejs",
   "buildpacks": [
     {
-      "url": "https://github.com/kwlockwo/heroku-buildpack-google-chrome",
+      "url": "https://github.com/kwlockwo/heroku-buildpack-google-chrome"
     },
     {
       "url": "https://github.com/heroku/heroku-buildpack-nodejs"
