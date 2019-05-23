@@ -7,7 +7,7 @@
   "license": "GNUv3",
   "dependencies": {
     "body-parser": "^1.18.3",
-    "debug": "^3.1.0",
+    "debug": "^4.1.1",
     "express": "^4.17.0",
     "html-pdf-chrome": "^0.5.0",
     "jsdom": "^11.11.0"
