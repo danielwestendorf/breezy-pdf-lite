@@ -14,7 +14,7 @@
   },
   "devDependencies": {
     "coveralls": "^3.0.3",
-    "eslint": "^4.19.0",
+    "eslint": "^5.16.0",
     "eslint-config-standard": "^11.0.0",
     "eslint-plugin-import": "^2.17.3",
     "eslint-plugin-node": "^8.0.1",
@@ -34,7 +34,11 @@
     "timeout": 10000
   },
   "nyc": {
-    "exclude": ["index.js"],
-    "include": ["lib/**/*.js"]
+    "exclude": [
+      "index.js"
+    ],
+    "include": [
+      "lib/**/*.js"
+    ]
   }
 }
