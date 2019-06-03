@@ -1,6 +1,6 @@
+/* global td */
 const Authorization = require('../../lib/authorization')
-
-const token = '123456'
+const token         = '123456'
 
 module.exports = {
   beforeEach() {

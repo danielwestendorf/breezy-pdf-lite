@@ -28,7 +28,7 @@
   },
   "scripts": {
     "test": "teenytest 'test/**/*-test.js' --helper test/helper.js && ./node_modules/.bin/eslint *.js, **/**.js",
-    "testncov": "nyc --reporter=lcov --reporter=text teenytest 'test/**/*-test.js' --helper test/helper.js && ./node_modules/.bin/eslint *.js, **/**.js"
+    "testncov": "nyc --reporter=lcov --reporter=text teenytest 'test/**/*-test.js' --helper test/helper.js && ./node_modules/.bin/eslint lib/* test/*"
   },
   "teenytest": {
     "timeout": 10000

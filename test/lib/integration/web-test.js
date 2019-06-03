@@ -1,8 +1,9 @@
+/* global server */
 const assert    = require('assert')
 const fetch     = require('node-fetch')
 
-const port  = server.port,
-      token = server.token
+const port  = server.port
+const token = server.token
 
 const htmlString = `
   <html>
@@ -38,7 +39,7 @@ module.exports = {
         },
 
         status201() {
-          assert.equal(this.response.status, 201)
+          assert.strictEqual(this.response.status, 201)
         },
 
         async bodyIsBuffer(done) {
@@ -54,7 +55,7 @@ module.exports = {
         },
 
         contentDisposition() {
-          assert.equal(this.response.headers.get('content-disposition'), 'attachment; filename="fancyfilename.pdf"')
+          assert.strictEqual(this.response.headers.get('content-disposition'), 'attachment; filename="fancyfilename.pdf"')
         }
       },
 
@@ -73,7 +74,7 @@ module.exports = {
         },
 
         status401() {
-          assert.equal(this.response.status, 401)
+          assert.strictEqual(this.response.status, 401)
         },
 
         async setsErrorMessage(done) {
@@ -95,7 +96,7 @@ module.exports = {
             this.response = await fetch(`http://localhost:${port}/render/html`, {
               method:  'POST',
               headers: { 'Authorization': `Bearer ${token}` },
-              body: `
+              body:    `
                 <html>
                   <head>
                     <meta name="breezy-pdf-callback" content="bob">
@@ -113,7 +114,7 @@ module.exports = {
         },
 
         status500() {
-          assert.equal(this.response.status, 500)
+          assert.strictEqual(this.response.status, 500)
         },
 
         async setsErrorMessage(done) {

@@ -1,4 +1,4 @@
-const assert  = require('assert')
+/* global td */
 let htmlPdf, CompletionTrigger
 
 module.exports = {
@@ -20,7 +20,7 @@ module.exports = {
     element() {
       new CompletionTrigger({
         element: 'div#foo',
-        timeout:  1
+        timeout: 1
       }).build()
 
       td.verify(new htmlPdf.CompletionTrigger.Element('div#foo', 1))
@@ -30,7 +30,7 @@ module.exports = {
       new CompletionTrigger({
         event:   'foo',
         element: 'body',
-        timeout:  1
+        timeout: 1
       }).build()
 
       td.verify(new htmlPdf.CompletionTrigger.Event('foo', 'body', 1))
@@ -47,7 +47,7 @@ module.exports = {
 
     timer() {
       new CompletionTrigger({
-        timer:  1
+        timer: 1
       }).build()
 
       td.verify(new htmlPdf.CompletionTrigger.Timer(1))

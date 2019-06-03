@@ -1,5 +1,5 @@
-const Server        = require('../../lib/server')
-const Authorization = require('../../lib/authorization')
+/* global td */
+const Server = require('../../lib/server')
 
 module.exports = {
   beforeEach() {

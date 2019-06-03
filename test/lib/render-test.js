@@ -1,3 +1,4 @@
+/* global td */
 const assert = require('assert')
 let Render
 
@@ -14,12 +15,6 @@ const htmlString = `
   </html>
 `.trim()
 
-const metadata = {
-  width:    '10',
-  callback: 'ready',
-  timeout:  '3000'
-}
-
 module.exports = {
   beforeEach() {
     this.htmlPdf = td.replace('html-pdf-chrome')
@@ -28,22 +23,22 @@ module.exports = {
   },
 
   metadata() {
-    assert.equal('10', new Render(htmlString).meta().width)
-    assert.equal('ready', new Render(htmlString).meta().callback)
+    assert.strictEqual('10', new Render(htmlString).meta().width)
+    assert.strictEqual('ready', new Render(htmlString).meta().callback)
   },
 
   printOptions() {
-    assert.equal(10, new Render(htmlString).printOptions().paperWidth)
+    assert.strictEqual(10, new Render(htmlString).printOptions().paperWidth)
   },
 
   toPdf() {
     td.when(this.htmlPdf.create(htmlString, td.matchers.isA(Object))).thenReturn(true)
-     assert.equal(true, new Render(htmlString).toPdf())
+    assert.strictEqual(true, new Render(htmlString).toPdf())
   },
 
   filename: {
     specified() {
-      assert.equal('fancyfilename.pdf', new Render(htmlString).filename())
+      assert.strictEqual('fancyfilename.pdf', new Render(htmlString).filename())
     },
 
     notSpecified() {
