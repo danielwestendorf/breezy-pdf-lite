@@ -24,7 +24,7 @@
     "node-fetch": "^2.6.0",
     "nyc": "^14.1.1",
     "teenytest": "^5.2.0",
-    "testdouble": "^3.12.1"
+    "testdouble": "^3.12.2"
   },
   "scripts": {
     "test": "teenytest 'test/**/*-test.js' --helper test/helper.js && ./node_modules/.bin/eslint *.js, **/**.js",
