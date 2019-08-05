@@ -2613,9 +2613,9 @@ test-exclude@^5.2.3:
     read-pkg-up "^4.0.0"
     require-main-filename "^2.0.0"
 
-testdouble@^3.12.2:
-  version "3.12.2"
-  resolved "https://registry.yarnpkg.com/testdouble/-/testdouble-3.12.2.tgz#a70c11cc83f1396a91f120cf8d0a3037aeb83f37"
+testdouble@^3.12.3:
+  version "3.12.3"
+  resolved "https://registry.yarnpkg.com/testdouble/-/testdouble-3.12.3.tgz#ddf1f299541e990a1630b607234cb357c3a025a5"
   dependencies:
     lodash "^4.17.14"
     quibble "^0.5.6"
