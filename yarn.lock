@@ -2295,13 +2295,7 @@ resolve@1.1.x:
   version "1.1.7"
   resolved "https://registry.yarnpkg.com/resolve/-/resolve-1.1.7.tgz#203114d82ad2c5ed9e8e0411b3932875e889e97b"
 
-resolve@^1.10.0, resolve@^1.11.0, resolve@^1.5.0, resolve@^1.8.1:
-  version "1.11.0"
-  resolved "https://registry.yarnpkg.com/resolve/-/resolve-1.11.0.tgz#4014870ba296176b86343d50b60f3b50609ce232"
-  dependencies:
-    path-parse "^1.0.6"
-
-resolve@^1.11.1:
+resolve@^1.10.0, resolve@^1.11.0, resolve@^1.11.1, resolve@^1.5.0, resolve@^1.8.1:
   version "1.11.1"
   resolved "https://registry.yarnpkg.com/resolve/-/resolve-1.11.1.tgz#ea10d8110376982fef578df8fc30b9ac30a07a3e"
   dependencies:
@@ -2594,9 +2588,9 @@ table@4.0.2:
     slice-ansi "1.0.0"
     string-width "^2.1.1"
 
-teenytest@^5.2.0:
-  version "5.2.0"
-  resolved "https://registry.yarnpkg.com/teenytest/-/teenytest-5.2.0.tgz#a2ad7a595007eabf24a7e77d60e24b0f3cfb55f7"
+teenytest@^5.2.1:
+  version "5.2.1"
+  resolved "https://registry.yarnpkg.com/teenytest/-/teenytest-5.2.1.tgz#e4f7b28be84351c9965dc7fd493c947fbf0f490c"
   dependencies:
     async "^2.6.2"
     function-names-at-line "^1.0.0"
