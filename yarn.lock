@@ -2587,9 +2587,9 @@ table@4.0.2:
     slice-ansi "1.0.0"
     string-width "^2.1.1"
 
-teenytest@^5.2.0:
-  version "5.2.0"
-  resolved "https://registry.yarnpkg.com/teenytest/-/teenytest-5.2.0.tgz#a2ad7a595007eabf24a7e77d60e24b0f3cfb55f7"
+teenytest@^5.3.0:
+  version "5.3.0"
+  resolved "https://registry.yarnpkg.com/teenytest/-/teenytest-5.3.0.tgz#133e7bdab700e09d0f7ed14f60e9607b171b3e18"
   dependencies:
     async "^2.6.2"
     function-names-at-line "^1.0.0"
