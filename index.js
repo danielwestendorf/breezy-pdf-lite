@@ -1,46 +1,21 @@
-const { spawn } = require('child_process')
-const Server    = require('./lib/server')
+const ChromeLauncher = require('chrome-launcher')
+const Server         = require('./lib/server')
 
-console.log('Starting Google Chrome')
-const chrome = spawn(
-  (process.env.GOOGLE_CHROME_SHIM || '/usr/bin/google-chrome'),
-  [
-    '--disable-extensions',
-    '--disable-background-networking',
-    '--safebrowsing-disable-auto-update',
-    '--disable-sync',
-    '--metrics-recording-only',
-    '--disable-default-apps',
-    '--no-first-run',
-    '--mute-audio',
-    '--hide-scrollbars',
-    '--no-sandbox',
-    '--headless',
-    '--disable-gpu',
-    '--disable-dev-shm-usage',
-    '--disable-software-rasterizer',
-    '--mute-audio',
-    '--remote-debugging-address=0.0.0.0',
-    '--remote-debugging-port=9222'
-  ]
-)
-
-chrome.on('close', (code) => {
-  console.error(`Chrome process closed with code ${code}`);
-  process.exit(code);
-});
-
-chrome.stdout.on('data', (data) => {
-  console.log(data.toString())
-})
-
-chrome.stderr.on('data', (data) => {
-  console.log(data.toString())
-})
-
-new Server({
+const webServer = new Server({
   port:  process.env.PORT || 5001,
   privateToken: process.env.PRIVATE_TOKEN
-}).start()
+})
 
-console.log('Starting web server...')
+console.log('Starting Google Chrome')
+
+ChromeLauncher.launch({
+  chromeFlags: ['--headless', '--disable-gpu', '--disable-dev-shm-usage', '--no-sandbox', '--hide-scrollbars'],
+  chromePath: (process.env.GOOGLE_CHROME_SHIM || '/usr/bin/google-chrome'),
+  port: 9222,
+  connectionPollInterval: 10
+}).then(chrome => {
+  console.log(`Chrome debugging port running on ${chrome.port}`);
+
+  webServer.start()
+  console.log('Starting web server...')
+})
