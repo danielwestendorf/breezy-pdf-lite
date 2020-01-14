@@ -20,6 +20,7 @@ const chrome = spawn(
     '--disable-dev-shm-usage',
     '--disable-software-rasterizer',
     '--mute-audio',
+    '--remote-debugging-address=0.0.0.0',
     '--remote-debugging-port=9222'
   ]
 )
@@ -30,6 +31,10 @@ chrome.on('close', (code) => {
 });
 
 chrome.stdout.on('data', (data) => {
+  console.log(data.toString())
+})
+
+chrome.stderr.on('data', (data) => {
   console.log(data.toString())
 })
 
