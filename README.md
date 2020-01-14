@@ -69,7 +69,7 @@ You might be rendering a Javascript heavy page, so it's helpful to let `chrome` 
 
 #### Docker
 
-`docker run -it -p 5002:5002 -e "DEBUG=*" -e "PORT=5002" -e "PRIVATE_TOKEN=YOURSUPERSECRETTOKEN" breezypdf/breezy-pdf-lite:latest`
+`docker run -it -p 5002:5002 -e "DEBUG=breezy-pdf-lite:*" -e "PORT=5002" -e "PRIVATE_TOKEN=YOURSUPERSECRETTOKEN" breezypdf/breezy-pdf-lite:latest`
 
 #### Non-Heroku
 
