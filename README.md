@@ -66,6 +66,11 @@ You might be rendering a Javascript heavy page, so it's helpful to let `chrome` 
 - [Swift](https://github.com/danielwestendorf/breezy-pdf-lite/issues/7)
 - [Python](https://github.com/danielwestendorf/breezy-pdf-lite/issues/8)
 - [Go](https://github.com/danielwestendorf/breezy-pdf-lite/issues/10)
+
+#### Docker
+
+`docker run -it -p 5002:5002 -e "DEBUG=*" -e "PORT=5002" -e "PRIVATE_TOKEN=YOURSUPERSECRETTOKEN" breezypdf/breezy-pdf-lite:latest`
+
 #### Non-Heroku
 
 1. Install node & yarn

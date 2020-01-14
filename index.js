@@ -10,7 +10,6 @@ console.log('Starting Google Chrome')
 
 ChromeLauncher.launch({
   chromeFlags: ['--headless', '--disable-gpu', '--disable-dev-shm-usage', '--no-sandbox', '--hide-scrollbars'],
-  chromePath: (process.env.GOOGLE_CHROME_SHIM || '/usr/bin/google-chrome'),
   port: 9222,
   connectionPollInterval: 10
 }).then((chrome) => {
@@ -22,7 +21,6 @@ ChromeLauncher.launch({
   })
 
   webServer.start()
-  console.log('Starting web server...')
 }).catch((error) => {
   console.error(error)
   console.error('Exiting')
