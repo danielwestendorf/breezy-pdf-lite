@@ -14,7 +14,12 @@ ChromeLauncher.launch({
   port: 9222,
   connectionPollInterval: 10
 }).then((chrome) => {
-  console.log(`Chrome debugging port running on ${chrome.port}`);
+  console.log(`Chrome debugging port running on ${chrome.port}`)
+
+  chrome.process.on('close', (code) => {
+    console.error(`Chrome process closed with code ${code}`);
+    process.exit(code);
+  })
 
   webServer.start()
   console.log('Starting web server...')
