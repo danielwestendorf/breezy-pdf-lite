@@ -10,8 +10,7 @@ console.log('Starting Google Chrome')
 
 ChromeLauncher.launch({
   chromeFlags: ['--headless', '--disable-gpu', '--disable-dev-shm-usage', '--no-sandbox', '--hide-scrollbars'],
-  port: 9222,
-  connectionPollInterval: 10
+  port: 9222
 }).then((chrome) => {
   console.log(`Chrome debugging port running on ${chrome.port}`)
 
