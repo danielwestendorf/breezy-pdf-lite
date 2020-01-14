@@ -13,9 +13,14 @@ ChromeLauncher.launch({
   chromePath: (process.env.GOOGLE_CHROME_SHIM || '/usr/bin/google-chrome'),
   port: 9222,
   connectionPollInterval: 10
-}).then(chrome => {
+}).then((chrome) => {
   console.log(`Chrome debugging port running on ${chrome.port}`);
 
   webServer.start()
   console.log('Starting web server...')
+}).catch((error) => {
+  console.error(error)
+  console.error('Exiting')
+
+  process.exit(1)
 })
