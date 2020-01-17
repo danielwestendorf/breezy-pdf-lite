@@ -128,7 +128,8 @@ function() {
 The predefined amount of time to wait before the document is rendered to PDF. Timer should be specified in ms, defaulting to 5000ms.
 
 ```html
-<meta name="breezy-pdf-timer" content="10000">```
+<meta name="breezy-pdf-timer" content="10000">
+```
 
 
 ### Deployment
