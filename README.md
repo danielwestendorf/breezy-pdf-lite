@@ -1,6 +1,6 @@
 # BreezyPDF Lite: HTML to PDF generation as a Service
 ### Submit a slug of HTML, get a Google Chrome rendered PDF back.
-[![Build Status](https://travis-ci.org/danielwestendorf/breezy-pdf-lite.svg?branch=master)](https://travis-ci.org/danielwestendorf/breezy-pdf-lite) [![Coverage Status](https://coveralls.io/repos/github/danielwestendorf/breezy-pdf-lite/badge.svg?branch=master)](https://coveralls.io/github/danielwestendorf/breezy-pdf-lite?branch=master) [![Open Source Helpers](https://www.codetriage.com/danielwestendorf/breezy-pdf-lite/badges/users.svg)](https://www.codetriage.com/danielwestendorf/breezy-pdf-lite)
+[![Build Status](https://travis-ci.org/danielwestendorf/breezy-pdf-lite.svg?branch=master)](https://travis-ci.org/danielwestendorf/breezy-pdf-lite) [![Open Source Helpers](https://www.codetriage.com/danielwestendorf/breezy-pdf-lite/badges/users.svg)](https://www.codetriage.com/danielwestendorf/breezy-pdf-lite)
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
