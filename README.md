@@ -6,11 +6,6 @@
 
 A quick to stand up HTML to PDF service powered by headless Google Chrome. Deploy with one click and start generating PDF's from your web application or command line.
 
-### Looking for something more robust?
-BreezyPDF Lite was extracted from [BreezyPDF](https://breezypdf.com) as a light weight alternative for new apps. As your software grows, a 1:1 server instance/render ratio will become slow and limiting.
-
-See [BreezyPDF.com](https://breezypdf.com) for Hosted and Enterprise versions which prioritize performance, redundancy, and usability.
-
 ### Getting Started
 
 ##### 1. Submit HTML to be converted
@@ -137,7 +132,7 @@ The predefined amount of time to wait before the document is rendered to PDF. Ti
 #### Heroku
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
-1. Click the deployment button to get the system running on Heroku
+1. Deploy to Heroku with one-click.
 
 ### Clients
 
