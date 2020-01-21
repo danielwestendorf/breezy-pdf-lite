@@ -10,7 +10,7 @@
   ],
   "scripts": {
   },
-  "stack": "heroku-16",
+  "stack": "heroku-18",
   "repository": "https://github.com/danielwestendorf/breezy-pdf-lite",
   "env": {
     "PRIVATE_TOKEN": {
@@ -27,7 +27,7 @@
   "image": "heroku/nodejs",
   "buildpacks": [
     {
-      "url": "https://github.com/kwlockwo/heroku-buildpack-google-chrome"
+      "url": "https://github.com/heroku/heroku-buildpack-google-chrome"
     },
     {
       "url": "https://github.com/heroku/heroku-buildpack-nodejs"
