@@ -16,7 +16,7 @@ ChromeLauncher.launch({
   console.log(`Chrome debugging port running on ${chrome.port}`)
 
   chrome.process.on('close', (code) => {
-    console.error(`Chrome process closed with code ${code}`);
+    console.error(`Chrome process closed with code ${code}`)
     process.exit(code);
   })
 

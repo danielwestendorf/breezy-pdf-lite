@@ -34,6 +34,6 @@ module.exports = {
   },
 
   afterAll: function() {
-    server.process.kill()
+    process.kill(server.process.pid, 'SIGINT')
   }
 }
