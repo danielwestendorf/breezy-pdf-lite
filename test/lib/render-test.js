@@ -1,7 +1,7 @@
 const assert = require('assert')
 let Render
 
-const htmlString = `
+let htmlString = `
   <html>
     <head>
       <meta name='breezy-pdf-filename' content='fancyfilename'/>
@@ -48,6 +48,20 @@ module.exports = {
 
     notSpecified() {
       assert(new Render('').filename().match(/\.pdf$/))
+    },
+
+    alreadyHasExtension() {
+      htmlString = `
+        <html>
+          <head>
+            <meta name='breezy-pdf-filename' content='fancyfilename.pdf'/>
+          </head>
+          <body>
+          </body>
+        </html>
+      `.trim()
+
+      assert.equal('fancyfilename.pdf', new Render(htmlString).filename())
     }
   }
 }
