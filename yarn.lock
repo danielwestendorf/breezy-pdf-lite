@@ -240,7 +240,7 @@ acorn-walk@^7.1.1:
   resolved "https://registry.yarnpkg.com/acorn-walk/-/acorn-walk-7.1.1.tgz#345f0dffad5c735e7373d2fec9a1023e6a44b83e"
   integrity sha512-wdlPY2tm/9XBr7QkKlq0WQVgiuGTX6YWPyRyBviSoScBuLfTVQhvwg6wJ369GJ/1nPfTLMfnrFIfjqVg6d+jQQ==
 
-acorn@^3.0.4, acorn@^3.1.0:
+acorn@^3.0.4:
   version "3.3.0"
   resolved "https://registry.yarnpkg.com/acorn/-/acorn-3.3.0.tgz#45e37fb39e8da3f25baee3ff5369e2bb5f22017a"
 
@@ -1251,11 +1251,13 @@ function-bind@^1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/function-bind/-/function-bind-1.1.1.tgz#a56899d3ea3c9bab874bb9773b7c5ede92f4895d"
 
-function-names-at-line@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/function-names-at-line/-/function-names-at-line-1.0.0.tgz#3441d99ed2c7efbaf38a850b193c51e139a54c5f"
+function-names-at-line@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/function-names-at-line/-/function-names-at-line-1.1.0.tgz#ac3fa659c8172b46e5817f9f6b31f6e5a59d5684"
+  integrity sha512-UMY9cMhbFjL15D8/syCW1ceip5sR49TmRwnAhfX5yh9iA1kxe1XeG3Zmq/g/a5CqsJxp448Bh11zY+WU+xe1Iw==
   dependencies:
-    acorn "^3.1.0"
+    acorn "^7.1.1"
+    acorn-walk "^7.1.1"
 
 functional-red-black-tree@^1.0.1:
   version "1.0.1"
@@ -1916,11 +1918,6 @@ minimist@^1.2.0, minimist@^1.2.5:
   resolved "https://registry.yarnpkg.com/minimist/-/minimist-1.2.5.tgz#67d66014b66a6a8aaa0c083c5fd58df4e4e97602"
   integrity sha512-FM9nNUYrRBAELZQT3xeZQ7fmMOBg6nWNmJKTcgsJeaLstP/UODVpGsr5OhXhhXg6f+qtJ8uiZ+PUxkDWcgIXLw==
 
-minimist@^1.2.5:
-  version "1.2.5"
-  resolved "https://registry.yarnpkg.com/minimist/-/minimist-1.2.5.tgz#67d66014b66a6a8aaa0c083c5fd58df4e4e97602"
-  integrity sha512-FM9nNUYrRBAELZQT3xeZQ7fmMOBg6nWNmJKTcgsJeaLstP/UODVpGsr5OhXhhXg6f+qtJ8uiZ+PUxkDWcgIXLw==
-
 minimist@~0.0.1:
   version "0.0.10"
   resolved "https://registry.yarnpkg.com/minimist/-/minimist-0.0.10.tgz#de3f98543dbf96082be48ad1a0c7cda836301dcf"
@@ -2408,13 +2405,7 @@ resolve@1.1.x:
   version "1.1.7"
   resolved "https://registry.yarnpkg.com/resolve/-/resolve-1.1.7.tgz#203114d82ad2c5ed9e8e0411b3932875e889e97b"
 
-resolve@^1.10.0, resolve@^1.10.1, resolve@^1.11.1, resolve@^1.12.0, resolve@^1.5.0:
-  version "1.14.2"
-  resolved "https://registry.yarnpkg.com/resolve/-/resolve-1.14.2.tgz#dbf31d0fa98b1f29aa5169783b9c290cb865fea2"
-  dependencies:
-    path-parse "^1.0.6"
-
-resolve@^1.3.2:
+resolve@^1.10.0, resolve@^1.10.1, resolve@^1.11.1, resolve@^1.12.0, resolve@^1.3.2, resolve@^1.5.0:
   version "1.15.1"
   resolved "https://registry.yarnpkg.com/resolve/-/resolve-1.15.1.tgz#27bdcdeffeaf2d6244b95bb0f9f4b4653451f3e8"
   integrity sha512-84oo6ZTtoTUpjgNEr5SJyzQhzL72gaRodsSfyxC/AXRvwu0Yse9H8eF9IpGo7b8YetZhlI6v7ZQ6bKBFV/6S7w==
@@ -2741,12 +2732,13 @@ table@4.0.2:
     slice-ansi "1.0.0"
     string-width "^2.1.1"
 
-teenytest@^5.3.0:
-  version "5.3.0"
-  resolved "https://registry.yarnpkg.com/teenytest/-/teenytest-5.3.0.tgz#133e7bdab700e09d0f7ed14f60e9607b171b3e18"
+teenytest@^6.0.1:
+  version "6.0.1"
+  resolved "https://registry.yarnpkg.com/teenytest/-/teenytest-6.0.1.tgz#91e751105757b45888e9aab4506c0b9b5f3cb705"
+  integrity sha512-gupsqwZbcfHzCVlaXSt4ZqXKWhXRsBhOQT5FbcD7fTr8NpQQM2Rn5OUQrrSHzyycVs66hy+X8lGPAo244axrwA==
   dependencies:
     async "^2.6.2"
-    function-names-at-line "^1.0.0"
+    function-names-at-line "^1.1.0"
     glob "^7.1.3"
     lodash "^4.17.11"
     lodash-deeper "^1.0.0"
