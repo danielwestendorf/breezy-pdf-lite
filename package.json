@@ -23,7 +23,7 @@
     "eslint-plugin-standard": "^3.0.1",
     "istanbul": "^0.4.5",
     "node-fetch": "^2.6.0",
-    "nyc": "^15.0.0",
+    "nyc": "^15.1.0",
     "teenytest": "^6.0.2",
     "testdouble": "^3.13.1"
   },
