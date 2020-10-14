@@ -1,16 +1,9 @@
 const ChromeLauncher = require('chrome-launcher')
 const Server         = require('./lib/server')
 
-const compressionOptions = {
-  level:     process.env.COMPRESSION_LEVEL || -1,
-  chunkSize: process.env.COMPRESSION_CHUNK_SIZE || 16384,
-  memLevel:  process.env.COMPRESSION_MEM_LEVEL || 8
-}
-
 const webServer = new Server({
-  port:         process.env.PORT || 5001,
-  privateToken: process.env.PRIVATE_TOKEN,
-  compression:  compressionOptions
+  port:  process.env.PORT || 5001,
+  privateToken: process.env.PRIVATE_TOKEN
 })
 
 console.log('Starting Google Chrome')
