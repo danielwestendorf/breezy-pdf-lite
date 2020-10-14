@@ -10,7 +10,7 @@
     "chrome-launcher": "^0.13.3",
     "debug": "^4.1.1",
     "express": "^4.17.1",
-    "html-pdf-chrome": "^0.6.0",
+    "html-pdf-chrome": "^0.6.1",
     "jsdom": "^16.2.2"
   },
   "devDependencies": {
