@@ -1,0 +1,22 @@
+name: Test
+
+on: push
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/cache@v2
+        with:
+          path: |
+            node_modules
+            */*/node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-node-${{ hashFiles('yarn.lock') }}
+            ${{ runner.os }}-node-
+      - name: Install dependencies
+        run: yarn --frozen-lockfile
+      - name: Test
+        run: npm test
