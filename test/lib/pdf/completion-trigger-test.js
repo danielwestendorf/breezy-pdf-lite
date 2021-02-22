@@ -1,61 +1,72 @@
-let htmlPdf, CompletionTrigger
-
 module.exports = {
   beforeEach() {
-    htmlPdf           = td.replace('html-pdf-chrome')
-    CompletionTrigger = require('../../../lib/pdf/completion-trigger')
+    this.htmlPdf           = td.replace('html-pdf-chrome')
+    this.CompletionTrigger = require('../../../lib/pdf/completion-trigger')
+    this.Trigger           = td.constructor()
   },
 
   build: {
     callback() {
-      new CompletionTrigger({
+      this.htmlPdf.CompletionTrigger.Callback = this.Trigger
+
+      new this.CompletionTrigger({
         callback: 'foo',
         timeout:  1
       }).build()
 
-      td.verify(new htmlPdf.CompletionTrigger.Callback('foo', 1))
+      td.verify(new this.Trigger('foo', 1))
     },
 
     element() {
-      new CompletionTrigger({
+      this.htmlPdf.CompletionTrigger.Element = this.Trigger
+
+      new this.CompletionTrigger({
         element: 'div#foo',
         timeout: 1
       }).build()
 
-      td.verify(new htmlPdf.CompletionTrigger.Element('div#foo', 1))
+      td.verify(new this.Trigger('div#foo', 1))
     },
 
     event() {
-      new CompletionTrigger({
+      this.htmlPdf.CompletionTrigger.Event = this.Trigger
+
+      new this.CompletionTrigger({
         event:   'foo',
         element: 'body',
         timeout: 1
       }).build()
 
-      td.verify(new htmlPdf.CompletionTrigger.Event('foo', 'body', 1))
+      td.verify(new this.Trigger('foo', 'body', 1))
     },
 
     variable() {
-      new CompletionTrigger({
+      this.htmlPdf.CompletionTrigger.Variable = this.Trigger
+
+      new this.CompletionTrigger({
         variable: 'foo',
         timeout:  1
       }).build()
 
-      td.verify(new htmlPdf.CompletionTrigger.Variable('foo', 1))
+      td.verify(new this.Trigger('foo', 1))
     },
 
     timer() {
-      new CompletionTrigger({
+      this.htmlPdf.CompletionTrigger.Timer = this.Trigger
+
+      new this.CompletionTrigger({
         timer: 1
       }).build()
 
-      td.verify(new htmlPdf.CompletionTrigger.Timer(1))
+      td.verify(new this.Trigger(1))
     },
 
     defaultTrigger() {
-      new CompletionTrigger({}).build()
+      this.htmlPdf.CompletionTrigger.Timer = this.Trigger
 
-      td.verify(new htmlPdf.CompletionTrigger.Timer(5000))
+      new this.CompletionTrigger({}).build()
+
+      td.verify(new this.Trigger(5000))
     }
   }
 }
