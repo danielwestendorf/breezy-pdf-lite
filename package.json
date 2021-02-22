@@ -15,7 +15,7 @@
   },
   "devDependencies": {
     "coveralls": "^3.1.0",
-    "eslint": "^4.19.0",
+    "eslint": "^7.20.0",
     "eslint-config-standard": "^11.0.0",
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-node": "^11.1.0",
@@ -29,7 +29,7 @@
   },
   "scripts": {
     "test": "teenytest 'test/**/*-test.js' --helper test/helper.js",
-    "lint": "./node_modules/.bin/eslint.js lib/* test/* *.js",
+    "lint": "./node_modules/eslint/bin/eslint.js lib/* test/* *.js",
     "testncov": "nyc --reporter=lcov --reporter=text teenytest 'test/**/*-test.js' --helper test/helper.js && ./node_modules/.bin/eslint *.js, **/**.js"
   },
   "teenytest": {
