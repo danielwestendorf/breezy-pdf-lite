@@ -1,10 +1,9 @@
 const assert  = require('assert')
-let htmlPdf, PrintOptions
+const PrintOptions = require('../../../lib/pdf/print-options')
 
 module.exports = {
   beforeEach() {
-    htmlPdf      = td.replace('html-pdf-chrome')
-    PrintOptions = require('../../../lib/pdf/print-options')
+    td.replace('html-pdf-chrome')
   },
 
   build: {

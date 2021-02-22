@@ -14,12 +14,6 @@ let htmlString = `
   </html>
 `.trim()
 
-const metadata = {
-  width:    '10',
-  callback: 'ready',
-  timeout:  '3000'
-}
-
 module.exports = {
   beforeEach() {
     this.htmlPdf = td.replace('html-pdf-chrome')
@@ -38,7 +32,7 @@ module.exports = {
 
   toPdf() {
     td.when(this.htmlPdf.create(htmlString, td.matchers.isA(Object))).thenReturn(true)
-     assert.equal(true, new Render(htmlString).toPdf())
+    assert.equal(true, new Render(htmlString).toPdf())
   },
 
   filename: {
