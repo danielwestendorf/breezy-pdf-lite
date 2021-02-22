@@ -4,7 +4,7 @@
   "description": "Render HTML to a PDF with Google Chrome, via an HTTP request",
   "main": "index.js",
   "author": "Daniel Westendorf",
-  "license": "GNUv3",
+  "license": "GPL-3.0-or-later",
   "dependencies": {
     "body-parser": "^1.18.3",
     "chrome-launcher": "^0.13.4",
