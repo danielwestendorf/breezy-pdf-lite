@@ -15,7 +15,7 @@ module.exports = {
   addsApiCreate() {
     this.server.start()
 
-    td.verify(this.server.app.post('/render/html', td.matchers.anything()))
+    td.verify(this.server.app.use('/render', td.matchers.anything()))
   },
 
   startsServer() {

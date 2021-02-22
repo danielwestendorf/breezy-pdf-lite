@@ -18,6 +18,21 @@ const htmlString = `
 `.trim()
 
 module.exports = {
+  root: {
+    async beforeEach(done) {
+      try {
+        this.response = await fetch(`http://localhost:${port}/`)
+      } catch (error) {
+        console.log(error)
+      }
+
+      done()
+    },
+
+    status200() {
+      assert.equal(this.response.status, 200)
+    }
+  },
   render: {
     html: {
       successful: {
