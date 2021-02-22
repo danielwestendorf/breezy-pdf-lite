@@ -1,5 +1,4 @@
 const Server        = require('../../lib/server')
-const Authorization = require('../../lib/authorization')
 
 module.exports = {
   beforeEach() {

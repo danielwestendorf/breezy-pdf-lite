@@ -1,8 +1,8 @@
 const assert    = require('assert')
 const fetch     = require('node-fetch')
 
-const port  = server.port,
-      token = server.token
+const port  = server.port
+const token = server.token
 
 const htmlString = `
   <html>
@@ -95,7 +95,7 @@ module.exports = {
             this.response = await fetch(`http://localhost:${port}/render/html`, {
               method:  'POST',
               headers: { 'Authorization': `Bearer ${token}` },
-              body: `
+              body:    `
                 <html>
                   <head>
                     <meta name="breezy-pdf-callback" content="bob">
