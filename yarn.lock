@@ -523,18 +523,6 @@ chardet@^0.4.0:
   resolved "https://registry.yarnpkg.com/chardet/-/chardet-0.4.2.tgz#b5473b33dc97c424e5d98dc87d55d4d8a29c8bf2"
   integrity sha1-tUc7M9yXxCTl2Y3IfVXU2KKci/I=
 
-chrome-launcher@0.13.2:
-  version "0.13.2"
-  resolved "https://registry.yarnpkg.com/chrome-launcher/-/chrome-launcher-0.13.2.tgz#d61a94c33d616ff027b346ac20dad50d1209f8f7"
-  integrity sha512-zWD9RVVKd8Nx2xKGY4G08lb3nCD+2hmICxovvRE9QjBKQzHFvCYqGlsw15b4zUxLKq3wXEwVbR/yLtMbfk7JbQ==
-  dependencies:
-    "@types/node" "*"
-    escape-string-regexp "^1.0.5"
-    is-wsl "^2.2.0"
-    lighthouse-logger "^1.0.0"
-    mkdirp "^0.5.3"
-    rimraf "^3.0.2"
-
 chrome-launcher@^0.13.4:
   version "0.13.4"
   resolved "https://registry.yarnpkg.com/chrome-launcher/-/chrome-launcher-0.13.4.tgz#4c7d81333c98282899c4e38256da23e00ed32f73"
@@ -547,10 +535,10 @@ chrome-launcher@^0.13.4:
     mkdirp "^0.5.3"
     rimraf "^3.0.2"
 
-chrome-remote-interface@^0.28.0:
-  version "0.28.2"
-  resolved "https://registry.yarnpkg.com/chrome-remote-interface/-/chrome-remote-interface-0.28.2.tgz#6be3554d2c227ff07eb74baa7e5d4911da12a5a6"
-  integrity sha512-F7mjof7rWvRNsJqhVXuiFU/HWySCxTA9tzpLxUJxVfdLkljwFJ1aMp08AnwXRmmP7r12/doTDOMwaNhFCJsacw==
+chrome-remote-interface@^0.30.0:
+  version "0.30.0"
+  resolved "https://registry.yarnpkg.com/chrome-remote-interface/-/chrome-remote-interface-0.30.0.tgz#b9367142b362668ca7c84d642318053ac6f51495"
+  integrity sha512-krIHiWQCRvlLhHmjWuGgHJfqhj2Jcj3mtVebq3c/Pwv4RF7P0A2eSy6YRqrBPwcziYJrtsPGR0rm7uCe4987rQ==
   dependencies:
     commander "2.11.x"
     ws "^7.2.0"
@@ -800,6 +788,11 @@ depd@~1.1.2:
 destroy@~1.0.4:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/destroy/-/destroy-1.0.4.tgz#978857442c44749e4206613e37946205826abd80"
+
+devtools-protocol@0.0.880455:
+  version "0.0.880455"
+  resolved "https://registry.yarnpkg.com/devtools-protocol/-/devtools-protocol-0.0.880455.tgz#1773734d924514bb10c7adf09ad77d29b181d6bc"
+  integrity sha512-+PA3vXXmSnWhpGNJsq+ZaSuZY5zMeR54T2blA2nN6jvLEfoBGSGpNQQvVIr5IKSu8hovyzA2Q4qaSMKjvifVHA==
 
 doctrine@1.5.0:
   version "1.5.0"
@@ -1443,13 +1436,14 @@ html-escaper@^2.0.0:
   resolved "https://registry.yarnpkg.com/html-escaper/-/html-escaper-2.0.1.tgz#beed86b5d2b921e92533aa11bce6d8e3b583dee7"
   integrity sha512-hNX23TjWwD3q56HpWjUHOKj1+4KKlnjv9PcmBUYKVpga+2cnb9nDx/B1o0yO4n+RZXZdiNxzx6B24C9aNMTkkQ==
 
-html-pdf-chrome@^0.6.1:
-  version "0.6.1"
-  resolved "https://registry.yarnpkg.com/html-pdf-chrome/-/html-pdf-chrome-0.6.1.tgz#54fb866478a28d4a40f71b8408422d85eed3fcd3"
-  integrity sha512-WAdk9K1ZJpvZ0D1JfCML+rjPD5RhjsqXaLafoRtyboqxfv7z7NKy06VMEgGDsM7lbO1k2E3aUimUd+jPbLzGGw==
+html-pdf-chrome@^0.7.0:
+  version "0.7.0"
+  resolved "https://registry.yarnpkg.com/html-pdf-chrome/-/html-pdf-chrome-0.7.0.tgz#1ba66f4222d8935a7ad10593cb3e1ff37dbcd9c3"
+  integrity sha512-iTkLNblcB4UyyoE0kqgPs0LMsN3dHwNKiMqUl2qkU+2sMBNGtXoQokG2Y2i5QaCE6tPt5kJ/uol+QiPT99bMGw==
   dependencies:
-    chrome-launcher "0.13.2"
-    chrome-remote-interface "^0.28.0"
+    chrome-launcher "^0.13.4"
+    chrome-remote-interface "^0.30.0"
+    devtools-protocol "0.0.880455"
 
 http-errors@1.7.2, http-errors@~1.7.2:
   version "1.7.2"
