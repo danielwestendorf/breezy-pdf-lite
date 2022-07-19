@@ -22,7 +22,7 @@
     "eslint-plugin-promise": "^4.3.1",
     "eslint-plugin-standard": "^3.0.1",
     "istanbul": "^0.4.5",
-    "node-fetch": "^2.6.1",
+    "node-fetch": "^3.2.9",
     "nyc": "^15.1.0",
     "teenytest": "^6.0.2",
     "testdouble": "^3.16.1"
