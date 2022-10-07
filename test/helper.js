@@ -1,6 +1,5 @@
 /* global td:true */
 /* global server:true */
-const { spawn } = require('child_process')
 
 global.td = require('testdouble')
 
@@ -17,23 +16,9 @@ module.exports = {
     td.reset()
   },
 
-  beforeAll: async function(done) {
-    const newEnv     = process.env
-    newEnv.PORT      = server.port
-    newEnv.PRIVATE_TOKEN = server.token
-
-    server.process = spawn('node', ['index.js'], { env: newEnv })
-
-    server.process.stdout.on('data', (data) => {
-      console.log(data.toString())
-
-      if (data.toString().match('Listening')) {
-        done()
-      }
-    })
+  beforeAll: () => {
   },
 
   afterAll: function() {
-    process.kill(server.process.pid, 'SIGINT')
   }
 }
