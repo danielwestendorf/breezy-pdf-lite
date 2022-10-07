@@ -17,6 +17,7 @@ let htmlString = `
 module.exports = {
   beforeEach() {
     this.htmlPdf = td.replace('html-pdf-chrome')
+    this.htmlPdf.CompletionTrigger.Callback = td.constructor()
 
     Render = require('../../lib/render')
   },

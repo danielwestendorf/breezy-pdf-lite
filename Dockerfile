@@ -10,5 +10,4 @@ RUN yarn install --production=true
 # Bundle app source
 COPY . .
 
-EXPOSE 8080
 CMD [ "node", "index.js" ]
