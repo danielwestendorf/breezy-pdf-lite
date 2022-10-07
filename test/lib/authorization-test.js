@@ -1,5 +1,3 @@
-const assert = require('assert')
-
 const Authorization = require('../../lib/authorization')
 
 let requestToken = '123456'

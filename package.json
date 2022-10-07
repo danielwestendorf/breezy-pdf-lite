@@ -29,7 +29,7 @@
   },
   "scripts": {
     "test": "teenytest 'test/**/*-test.js' --helper test/helper.js",
-    "lint": "./node_modules/.bin/eslint.js lib/* test/* *.js",
+    "lint": "./node_modules/.bin/eslint lib/* test/* *.js",
     "testncov": "nyc --reporter=lcov --reporter=text teenytest 'test/**/*-test.js' --helper test/helper.js && ./node_modules/.bin/eslint *.js, **/**.js"
   },
   "teenytest": {

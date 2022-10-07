@@ -1,6 +1,5 @@
 /* global td:true */
 /* global server:true */
-const { spawn } = require('child_process')
 
 global.td = require('testdouble')
 
