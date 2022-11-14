@@ -3075,10 +3075,10 @@ test-exclude@^6.0.0:
     glob "^7.1.4"
     minimatch "^3.0.4"
 
-testdouble@^3.16.1:
-  version "3.16.6"
-  resolved "https://registry.yarnpkg.com/testdouble/-/testdouble-3.16.6.tgz#3e3fce4a5c8681378b6c7a6d18884746a9dfb1e8"
-  integrity sha512-mijMgc9y7buK9IG9zSVhzlXsFMqWbLQHRei4SLX7F7K4Qtrcnglg6lIMTCmNs6RwDUyLGWtpIe+TzkugYHB+qA==
+testdouble@^3.16.7:
+  version "3.16.7"
+  resolved "https://registry.yarnpkg.com/testdouble/-/testdouble-3.16.7.tgz#3d17d3a8b38accf9b71f38fb001d35bbe7ec90de"
+  integrity sha512-TIpABt92h5rm0gFJgnD4k6p3GkDSCFpGNGLbCw+ZGfeJP1Doi9nJr0xGiuLqkmuZzXn5uy717fDlL94YajtZyw==
   dependencies:
     lodash "^4.17.15"
     quibble "^0.6.7"
