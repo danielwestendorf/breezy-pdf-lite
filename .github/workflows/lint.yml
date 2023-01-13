@@ -2,21 +2,21 @@ name: Lint
 
 on: push
 
+concurrency:
+  group: lint-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   eslint:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/cache@v2
-        with:
-          path: |
-            node_modules
-            */*/node_modules
-          key: ${{ runner.os }}-node-${{ hashFiles('yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-node-${{ hashFiles('yarn.lock') }}
-            ${{ runner.os }}-node-
+    - uses: actions/checkout@v2
+    - uses: actions/setup-node@v3
+      with:
+        node-version: 16.14.2
+        cache: 'yarn'
+    - name: Install modules
+      run: yarn
+    - name: Run ESLint
+      run: yarn run eslint app/ --ext .js
 
-      - uses: hallee/eslint-action@1.0.3
-        with:
-          repo-token: ${{secrets.GITHUB_TOKEN}}
