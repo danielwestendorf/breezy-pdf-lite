@@ -25,7 +25,7 @@
     "node-fetch": "^2.6.1",
     "nyc": "^15.1.0",
     "teenytest": "^6.0.2",
-    "testdouble": "^3.16.1"
+    "testdouble": "^3.16.8"
   },
   "scripts": {
     "test": "teenytest 'test/**/*-test.js' --helper test/helper.js",
