@@ -18,5 +18,5 @@ jobs:
     - name: Install modules
       run: yarn
     - name: Run ESLint
-      run: yarn run eslint app/ --ext .js
+      run: yarn run eslint lib/* lib/pdf/* --ext .js
 
