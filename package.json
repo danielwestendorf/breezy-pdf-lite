@@ -24,7 +24,7 @@
     "istanbul": "^0.4.5",
     "node-fetch": "^3.3.0",
     "nyc": "^15.1.0",
-    "teenytest": "^6.0.2",
+    "teenytest": "^6.0.4",
     "testdouble": "^3.16.8"
   },
   "scripts": {
