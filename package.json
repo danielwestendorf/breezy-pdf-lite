@@ -11,7 +11,7 @@
     "debug": "^4.3.1",
     "express": "^4.18.2",
     "html-pdf-chrome": "^0.8.3",
-    "jsdom": "^21.1.0"
+    "jsdom": "^21.1.1"
   },
   "devDependencies": {
     "coveralls": "^3.1.0",
