@@ -2711,13 +2711,13 @@ queue-microtask@^1.2.2:
   resolved "https://registry.yarnpkg.com/queue-microtask/-/queue-microtask-1.2.3.tgz#4929228bbc724dfac43e0efb058caf7b6cfb6243"
   integrity sha512-NuaNSa6flKT5JaSYQzJok04JzTL1CA6aGhv5rfLW3PgqA+M2ChpZQnAC8h8i4ZFkBS8X5RqkDBHA7r4hej3K9A==
 
-quibble@^0.6.14:
-  version "0.6.15"
-  resolved "https://registry.yarnpkg.com/quibble/-/quibble-0.6.15.tgz#6ceed62084a4ca60cbda94c796763bcde9c5093c"
-  integrity sha512-AKUMjlGPigm6slA3eXsTiCHg1ZRwzdsggUKCu8Ko6XyauPfkkBPOXbvdxwhPmC5GD/BtDXLEiPV9cV9xt+as1w==
+quibble@^0.6.17:
+  version "0.6.17"
+  resolved "https://registry.yarnpkg.com/quibble/-/quibble-0.6.17.tgz#1c47d40c4ee670fc1a5a4277ee792ca6eec8f4ca"
+  integrity sha512-uybGnGrx1hAhBCmzmVny+ycKaS5F71+q+iWVzbf8x/HyeEMDGeiQFVjWl1zhi4rwfTHa05+/NIExC4L5YRNPjQ==
   dependencies:
     lodash "^4.17.21"
-    resolve "^1.20.0"
+    resolve "^1.22.1"
 
 range-parser@~1.2.1:
   version "1.2.1"
@@ -2811,7 +2811,7 @@ resolve@1.1.x:
   resolved "https://registry.yarnpkg.com/resolve/-/resolve-1.1.7.tgz#203114d82ad2c5ed9e8e0411b3932875e889e97b"
   integrity sha512-9znBF0vBcaSN3W2j7wKvdERPwqTxSpCq+if5C0WoTCyV9n24rua28jeuQ2pL/HOf+yUe/Mef+H/5p60K0Id3bg==
 
-resolve@^1.10.1, resolve@^1.20.0, resolve@^1.22.1:
+resolve@^1.10.1, resolve@^1.22.1:
   version "1.22.1"
   resolved "https://registry.yarnpkg.com/resolve/-/resolve-1.22.1.tgz#27cb2ebb53f91abb49470a928bba7558066ac177"
   integrity sha512-nBpuuYuY5jFsli/JIs1oldw6fOQCBioohqWZg/2hiaOybXOft4lonv85uDOKXdf8rhyK159cxU5cDcK/NKk8zw==
@@ -3117,13 +3117,13 @@ test-exclude@^6.0.0:
     glob "^7.1.4"
     minimatch "^3.0.4"
 
-testdouble@^3.16.8:
-  version "3.16.8"
-  resolved "https://registry.yarnpkg.com/testdouble/-/testdouble-3.16.8.tgz#9c761031f3693d973c726e31a60ee73cd2871c96"
-  integrity sha512-jOKYRJ9mfgDxwuUOj84sl9DWiP1+KpHcgnhjlSHC8h1ZxJT3KD1FAAFVqnqmmyrzc/+0DRbI/U5xo1/K3PLi8w==
+testdouble@^3.17.0:
+  version "3.17.0"
+  resolved "https://registry.yarnpkg.com/testdouble/-/testdouble-3.17.0.tgz#7a5aab13fd0270769c926686ad8efce0336c8b7b"
+  integrity sha512-uiVYLhQPgtXuTr/BoSaY0LIL6zi0GfE6a5CFvha4P6MLcVXGTmtng1NF2RCN6HrVuSugJ5JJAzDEdfcdwHovdA==
   dependencies:
     lodash "^4.17.21"
-    quibble "^0.6.14"
+    quibble "^0.6.17"
     stringify-object-es5 "^2.5.0"
     theredoc "^1.0.0"
 
