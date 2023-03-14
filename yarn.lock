@@ -3123,10 +3123,10 @@ symbol-tree@^3.2.4:
   resolved "https://registry.yarnpkg.com/symbol-tree/-/symbol-tree-3.2.4.tgz#430637d248ba77e078883951fb9aa0eed7c63fa2"
   integrity sha512-9QNk5KwDF+Bvz+PyObkmSYjI5ksVUYtjW7AU22r2NKcfLJcXp96hkDWU3+XndOsUb+AQ9QhfzfCT2O+CNWT5Tw==
 
-teenytest@^6.0.4:
-  version "6.0.4"
-  resolved "https://registry.yarnpkg.com/teenytest/-/teenytest-6.0.4.tgz#43417444704df1b9a848805b768d296ab823c940"
-  integrity sha512-mLkqTkxz19ryFytfNfBLM2FVR116hPmpNlosruPWxmx2FvxNLWG2476UvGQjVPmUuBt4G+I2JjXU5649T83LaQ==
+teenytest@^6.0.5:
+  version "6.0.5"
+  resolved "https://registry.yarnpkg.com/teenytest/-/teenytest-6.0.5.tgz#e50e22cefa6f3d1f5fefd0060850761edd5b7270"
+  integrity sha512-5Eei4dcklNVg4PKxUijOZi2FSOw9we/XLWUAN/7oI+WntzPv45XGJSlhUaaRziJ7vQwIGi4KiaTbus719FC2Ig==
   dependencies:
     async "^3.2.4"
     function-names-at-line "^1.1.0"
