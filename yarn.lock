@@ -3151,10 +3151,10 @@ test-exclude@^6.0.0:
     glob "^7.1.4"
     minimatch "^3.0.4"
 
-testdouble@^3.17.0:
-  version "3.17.0"
-  resolved "https://registry.yarnpkg.com/testdouble/-/testdouble-3.17.0.tgz#7a5aab13fd0270769c926686ad8efce0336c8b7b"
-  integrity sha512-uiVYLhQPgtXuTr/BoSaY0LIL6zi0GfE6a5CFvha4P6MLcVXGTmtng1NF2RCN6HrVuSugJ5JJAzDEdfcdwHovdA==
+testdouble@^3.17.1:
+  version "3.17.1"
+  resolved "https://registry.yarnpkg.com/testdouble/-/testdouble-3.17.1.tgz#e0149613cfcaac104fdc79c8ecc0f603000ea891"
+  integrity sha512-6u3v0rKHf3oJHSD7UuxFkXXcvV3QWguYdfU9QKaRjLF/wRa9Hxg0fmRzdbMhPX2fYs4xVnw4l1h2GsKJiwFRlw==
   dependencies:
     lodash "^4.17.21"
     quibble "^0.6.17"
