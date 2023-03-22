@@ -322,10 +322,10 @@
   resolved "https://registry.yarnpkg.com/@tootallnate/once/-/once-2.0.0.tgz#f544a148d3ab35801c1f633a7441fd87c2e484bf"
   integrity sha512-XCuKFP5PS55gnMVu3dty8KPatLqUoy/ZYzDzAGCQ8JNFCkLXzmI7vNHCR+XpbZaMWQK/vQubr7PkYq8g470J/A==
 
-"@types/chrome-remote-interface@^0.31.5":
-  version "0.31.8"
-  resolved "https://registry.yarnpkg.com/@types/chrome-remote-interface/-/chrome-remote-interface-0.31.8.tgz#2ddd1f4bb990ff9e6d55d23c5d25df19906830c1"
-  integrity sha512-Htt8oN9aE4jU4hm3w3KwPpY/fnuq/qcNd+3UQIZPApHrK5NvUj89po3l94x6R1ruUYhUVLuLuXRbseuLPRDeTA==
+"@types/chrome-remote-interface@^0.31.9":
+  version "0.31.9"
+  resolved "https://registry.yarnpkg.com/@types/chrome-remote-interface/-/chrome-remote-interface-0.31.9.tgz#d0749d82c5d10dde7428aa6cb262924b9dddd6ee"
+  integrity sha512-U4z4aCmQ/lhtKC1g2N+qbchikPnLbd6u8P3F4G3/ougX5rMQnW4a17u+kyBmKwtRzX9Wu3i14ZeIfbk0xTyUUQ==
   dependencies:
     devtools-protocol "0.0.927104"
 
@@ -701,10 +701,10 @@ chrome-launcher@^0.15.1:
     is-wsl "^2.2.0"
     lighthouse-logger "^1.0.0"
 
-chrome-remote-interface@^0.32.0:
-  version "0.32.0"
-  resolved "https://registry.yarnpkg.com/chrome-remote-interface/-/chrome-remote-interface-0.32.0.tgz#d7e59a9265d9a208d6b632b8f69c837e1ccc4241"
-  integrity sha512-g8xK3lKvAgEs3Hj/masMfYOyIFbDkXsMxD7e55TRUvbL7pAb6X9uo+0mKQFjZqQ7DN3b8DIdBfkKw1nwkeWHhw==
+chrome-remote-interface@^0.32.1:
+  version "0.32.1"
+  resolved "https://registry.yarnpkg.com/chrome-remote-interface/-/chrome-remote-interface-0.32.1.tgz#e3478ca712223e51c4df7294cbc536f868ca0aa6"
+  integrity sha512-CU3/K/8YlU2H0DjsLRbxPsG4piiSGUcIy6GkGXF11SqOYoIeuUBivOsGXScaZnTyC1p4wFSR+GNmAM434/ALWw==
   dependencies:
     commander "2.11.x"
     ws "^7.2.0"
@@ -1760,14 +1760,14 @@ html-escaper@^2.0.0:
   resolved "https://registry.yarnpkg.com/html-escaper/-/html-escaper-2.0.2.tgz#dfd60027da36a36dfcbe236262c00a5822681453"
   integrity sha512-H2iMtd0I4Mt5eYiapRdIDjp+XzelXQ0tFE4JS7YFwFevXXMmOp9myNrUvCg0D6ws8iqkRPBfKHgbwig1SmlLfg==
 
-html-pdf-chrome@^0.8.3:
-  version "0.8.3"
-  resolved "https://registry.yarnpkg.com/html-pdf-chrome/-/html-pdf-chrome-0.8.3.tgz#652b2dbab12f31ec5cc900dcd56f6da07837d716"
-  integrity sha512-R/wZM5KRzzHOvYMmQCXRfjOEt/j0PJJYHUErsYuBLxVQqLF6eTbfHgnepSq0AuYf01u7exAm9BP2RvQQd0D2uw==
+html-pdf-chrome@^0.8.4:
+  version "0.8.4"
+  resolved "https://registry.yarnpkg.com/html-pdf-chrome/-/html-pdf-chrome-0.8.4.tgz#f68948285d0e53e54098cf47ff722d5e1b1b83fa"
+  integrity sha512-/kZzYDYOs0b/aQP7K4iik0QYUdmnH2YJzsZn95iaLZNmmHXAiB579aUGVUrg009FlULl2gTJYE6RB0ZofKh+pA==
   dependencies:
-    "@types/chrome-remote-interface" "^0.31.5"
+    "@types/chrome-remote-interface" "^0.31.9"
     chrome-launcher "^0.15.1"
-    chrome-remote-interface "^0.32.0"
+    chrome-remote-interface "^0.32.1"
 
 http-errors@2.0.0:
   version "2.0.0"
